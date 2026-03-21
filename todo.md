@@ -46,6 +46,18 @@
 - [x] auth.logout vitest — passing
 - [x] project.submit vitest — 3 tests passing
 
+## v2 Rebuild — Corrections from Matty
+- [x] Research accurate Queensland volume residential render photography
+- [x] Generate new hero images: render crews on site, volume estates, freshly finished facades
+- [x] Remove Sunset Cove from Render King (MCK story only)
+- [x] Rewrite homepage messaging — Render first, volume builder pain points (speed, consistency, communication, crew size)
+- [x] Reorder services: Acrylic Render dominant, Hebel/EPS as add-on/support services
+- [x] Fix Hebel imagery — external wall panels not interior framing
+- [x] Replace luxury-only imagery with mix of volume residential + quality finishes
+- [x] Rewrite stats/authority section around crew size, volume, estate delivery capability
+- [x] Rebuild About section around operational scale, systems, crew management
+- [x] Update all service page copy to reflect correct positioning
+
 ## Future Enhancements
 - [ ] File upload to S3 from Builder Portal (currently file names only)
 - [ ] Admin dashboard to view all project submissions
