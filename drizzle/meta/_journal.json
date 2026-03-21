@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1774096522705,
+      "tag": "0000_typical_silk_fever",
+      "breakpoints": true
+    }
+  ]
+}
