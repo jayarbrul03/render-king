@@ -65,3 +65,23 @@
 - [ ] Google My Business schema markup
 - [ ] Blog / News section for SEO content
 - [ ] Micro Cement King website build (next project)
+
+## v3 Visual Editor Feedback — Matty's Corrections
+- [ ] Hero: fix heading formatting — no orphan word, full-width impact
+- [ ] Hero: new concept — process flow (AAC Hebel → basecoat → finish render → luxury completed home) OR new aspirational hero image
+- [ ] Hero: replace hero photo — statement home, place people want to live
+- [ ] Problem section: remove competitor-bagging language, reframe around how we deliver above expectations
+- [ ] Problem section heading: rewrite — make it clear and direct
+- [ ] Services grid: reorder — Acrylic Render + Texture Coatings top, Specialty Finishes next, Hebel + EPS as add-ons bottom
+- [ ] Services grid: separate EPS Cladding and Specialty Finishes into their own cards
+- [ ] Services grid: add external Microcement as a service card
+- [ ] Services grid: add supplier/authority logos (Dulux Acratex, CSR Hebel, Rockcote, Ensulite)
+- [ ] Portfolio images: better colour selection, proper landscaping, aspirational homes
+- [ ] Portfolio: add single-storey homes row
+- [ ] Portfolio: Hebel image must show completed finished home with windows in, not frames
+- [ ] MCK section: remove "polished" language, make it a statement
+- [ ] Navigation: add crown/logo mark or visual identity — not plain text only
+- [ ] Footer: reorder services — Microcement, Render, Specialty Finishes, then Hebel, EPS
+- [ ] Footer: remove "sister brand" language for MCK
+- [ ] Footer: update phone number (find from Render Render website)
+- [ ] Footer: change email label to "Projects at Render King"

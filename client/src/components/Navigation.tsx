@@ -1,19 +1,39 @@
 /*
- * RENDER KING — Navigation Component
- * Dark Luxury Editorial: transparent → dark on scroll
- * Gold accent on hover/active states
- * Persistent "Submit Project" CTA in gold
+ * RENDER KING — Navigation Component v3
+ * Crown logomark + RENDER KING wordmark
+ * Transparent → dark on scroll
+ * Gold accent on hover/active
+ * Persistent "Submit Project" gold CTA
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const services = [
-  { label: "Acrylic Render", href: "/services/acrylic-render" },
+  { label: "Acrylic Render & Texture Coatings", href: "/services/acrylic-render" },
+  { label: "Specialty Finishes & External Microcement", href: "/services/specialty-finishes" },
   { label: "Hebel Supply & Install", href: "/services/hebel-installation" },
   { label: "EPS Cladding Systems", href: "/services/eps-cladding" },
-  { label: "Specialty Finishes", href: "/services/specialty-finishes" },
 ];
+
+// Crown SVG mark — simple, sharp, premium
+function CrownMark({ size = 28 }: { size?: number }) {
+  return (
+    <svg width={size} height={size * 0.75} viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2 26L8 8L16 18L20 4L24 18L32 8L38 26H2Z"
+        fill="#c9a84c"
+        stroke="#c9a84c"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <rect x="2" y="26" width="36" height="3" fill="#c9a84c" rx="0.5" />
+      <circle cx="2" cy="8" r="2" fill="#c9a84c" />
+      <circle cx="20" cy="4" r="2" fill="#c9a84c" />
+      <circle cx="38" cy="8" r="2" fill="#c9a84c" />
+    </svg>
+  );
+}
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,18 +60,19 @@ export default function Navigation() {
     >
       <div className="container">
         <div className="flex items-center justify-between h-18 py-4">
-          {/* Logo */}
+          {/* Logo — Crown + Wordmark */}
           <Link href="/" className="flex items-center gap-3 group">
+            <CrownMark size={32} />
             <div className="flex flex-col leading-none">
               <span
-                className="text-white font-black uppercase tracking-widest text-lg"
-                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em" }}
+                className="text-white font-black uppercase tracking-widest"
+                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.22em", fontSize: "1rem" }}
               >
                 RENDER
               </span>
               <span
-                className="rk-gold font-black uppercase tracking-widest text-lg"
-                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em" }}
+                className="rk-gold font-black uppercase tracking-widest"
+                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.22em", fontSize: "1rem" }}
               >
                 KING
               </span>
@@ -79,7 +100,7 @@ export default function Navigation() {
                 Services <ChevronDown size={12} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-[#111] border border-white/10 shadow-2xl">
+                <div className="absolute top-full left-0 mt-2 w-72 bg-[#111] border border-white/10 shadow-2xl">
                   {services.map((s) => (
                     <Link
                       key={s.href}
@@ -101,7 +122,10 @@ export default function Navigation() {
           </div>
 
           {/* CTA */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-4">
+            <a href="tel:0468041477" className="text-white/60 hover:text-[#c9a84c] text-xs font-semibold transition-colors" style={{ letterSpacing: "0.08em" }}>
+              0468 041 477
+            </a>
             <Link href="/submit-project" className="rk-btn-gold text-xs">
               Submit Project
             </Link>
@@ -133,7 +157,10 @@ export default function Navigation() {
             <MobileNavLink href="/about" label="About" />
             <MobileNavLink href="/safety" label="Safety" />
             <MobileNavLink href="/contact" label="Contact" />
-            <div className="mt-4">
+            <div className="mt-4 space-y-3">
+              <a href="tel:0468041477" className="block text-center text-white/70 text-sm font-semibold py-2">
+                0468 041 477
+              </a>
               <Link href="/submit-project" className="rk-btn-gold w-full text-center block">
                 Submit Project
               </Link>
