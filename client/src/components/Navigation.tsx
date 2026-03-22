@@ -1,9 +1,9 @@
 /*
- * RENDER KING — Navigation Component v3
- * Crown logomark + RENDER KING wordmark
+ * RENDER KING — Navigation Component v4
+ * Clean premium wordmark — no crown icon
+ * RENDER in white / KING in gold — stacked, tight, bold
  * Transparent → dark on scroll
- * Gold accent on hover/active
- * Persistent "Submit Project" gold CTA
+ * Persistent "Submit Project" gold CTA + phone number
  */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
@@ -15,25 +15,6 @@ const services = [
   { label: "Hebel Supply & Install", href: "/services/hebel-installation" },
   { label: "EPS Cladding Systems", href: "/services/eps-cladding" },
 ];
-
-// Crown SVG mark — simple, sharp, premium
-function CrownMark({ size = 28 }: { size?: number }) {
-  return (
-    <svg width={size} height={size * 0.75} viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M2 26L8 8L16 18L20 4L24 18L32 8L38 26H2Z"
-        fill="#c9a84c"
-        stroke="#c9a84c"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-      <rect x="2" y="26" width="36" height="3" fill="#c9a84c" rx="0.5" />
-      <circle cx="2" cy="8" r="2" fill="#c9a84c" />
-      <circle cx="20" cy="4" r="2" fill="#c9a84c" />
-      <circle cx="38" cy="8" r="2" fill="#c9a84c" />
-    </svg>
-  );
-}
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,19 +41,29 @@ export default function Navigation() {
     >
       <div className="container">
         <div className="flex items-center justify-between h-18 py-4">
-          {/* Logo — Crown + Wordmark */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <CrownMark size={32} />
+
+          {/* Logo — Clean Premium Wordmark Only */}
+          <Link href="/" className="flex items-center group">
             <div className="flex flex-col leading-none">
               <span
-                className="text-white font-black uppercase tracking-widest"
-                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.22em", fontSize: "1rem" }}
+                className="text-white font-black uppercase"
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  letterSpacing: "0.28em",
+                  fontSize: "1.05rem",
+                  lineHeight: 1,
+                }}
               >
                 RENDER
               </span>
               <span
-                className="rk-gold font-black uppercase tracking-widest"
-                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.22em", fontSize: "1rem" }}
+                className="rk-gold font-black uppercase"
+                style={{
+                  fontFamily: "Montserrat, sans-serif",
+                  letterSpacing: "0.28em",
+                  fontSize: "1.05rem",
+                  lineHeight: 1.1,
+                }}
               >
                 KING
               </span>
@@ -123,7 +114,11 @@ export default function Navigation() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:0468041477" className="text-white/60 hover:text-[#c9a84c] text-xs font-semibold transition-colors" style={{ letterSpacing: "0.08em" }}>
+            <a
+              href="tel:0468041477"
+              className="text-white/60 hover:text-[#c9a84c] text-xs font-semibold transition-colors"
+              style={{ letterSpacing: "0.08em" }}
+            >
               0468 041 477
             </a>
             <Link href="/submit-project" className="rk-btn-gold text-xs">

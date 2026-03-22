@@ -85,3 +85,12 @@
 - [ ] Footer: remove "sister brand" language for MCK
 - [ ] Footer: update phone number (find from Render Render website)
 - [ ] Footer: change email label to "Projects at Render King"
+
+## v4 Feedback — Matty
+- [ ] Remove crown from logo — clean wordmark only, no icon
+- [ ] New hero image — premium exterior with specialty finish/microcement element, something special
+- [ ] Hero headline — rewritten for builders: speed, quality, delivery
+- [ ] CTAs changed to Submit a Project + Call Us Now (remove View Our Work from hero)
+- [ ] Process flow section — replace crew photo with fading sequence: AAC substrate → basecoat → finish render → completed luxury home
+- [ ] No Render Render branding visible in process photos
+- [ ] Lock in RENDER DONE RIGHT. EVERY TIME. as brand slogan

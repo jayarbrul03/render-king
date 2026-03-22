@@ -15,8 +15,12 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Clock, Users, Phone, Zap, Shield, Award, Star } from "lucide-react";
 
-// v3 CDN images
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-hero-luxury-c-hqofk6jZPkb9pZ5KprwFVM.webp";
+// v4 CDN images
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-hero-v4-premium-kdDLtzCBsKFqnPhHy8aUQV.webp";
+const PROCESS_1 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-1-aac-7dTG3Bu8X4Ym435zuUn4vQ.webp";
+const PROCESS_2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-2-basecoat-FEz4Qu65L6RV5A9SfPSKN9.webp";
+const PROCESS_3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-3-finish-6MLu7EbQV4jh5e2ZPzwwUk.webp";
+const PROCESS_4 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-4-complete-cEShehPmaHYGxUNrCLcw6H.webp";
 const ESTATE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-portfolio-estate_5d030290.jpg";
 const CREW_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v2-crew-85TRdReUj7gJdkTizPmksY.webp";
 const TEXTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v2-texture-dYRg9c2L9YQeJmNNKeihRX.webp";
@@ -173,24 +177,27 @@ export default function Home() {
               className="text-white font-black uppercase mb-6"
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+                fontSize: "clamp(2.6rem, 6.5vw, 5.2rem)",
                 letterSpacing: "0.02em",
                 lineHeight: 0.93,
               }}
             >
-              RENDER DONE RIGHT.{" "}
-              <span className="rk-gold">EVERY TIME.</span>
+              YOUR BUILDS.{" "}
+              <span className="rk-gold">FINISHED FASTER.</span>
             </h1>
-            <p className="text-white/70 text-base lg:text-lg mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300 }}>
-              24 years. 10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast. Volume builders trust us because we show up, we communicate, and the finish is right.
+            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: 300 }}>
+              Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish — every lot, every time.
+            </p>
+            <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300 }}>
+              24 years. 10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/submit-project" className="rk-btn-gold">
                 Submit a Project
               </Link>
-              <Link href="/portfolio" className="rk-btn-outline">
-                View Our Work
-              </Link>
+              <a href="tel:0468041477" className="rk-btn-outline">
+                Call Us Now
+              </a>
             </div>
           </div>
         </div>
@@ -245,15 +252,34 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative fade-up">
-              <div
-                className="w-full aspect-[4/5] bg-cover bg-center"
-                style={{ backgroundImage: `url(${CREW_IMG})` }}
-              />
-              <div className="absolute -bottom-6 -left-6 bg-[#c9a84c] p-6 hidden lg:block">
-                <div className="text-[#0f0f0f] font-black text-3xl rk-heading">24</div>
-                <div className="text-[#0f0f0f] text-xs font-bold uppercase tracking-wider">Years on the Tools</div>
+            {/* Process Flow — AAC → Basecoat → Finish → Complete */}
+            <div className="fade-up">
+              <div className="grid grid-cols-2 gap-1">
+                {[
+                  { img: PROCESS_1, step: "01", label: "AAC / Hebel Install" },
+                  { img: PROCESS_2, step: "02", label: "Basecoat Applied" },
+                  { img: PROCESS_3, step: "03", label: "Finish Render" },
+                  { img: PROCESS_4, step: "04", label: "Completed" },
+                ].map((p, i) => (
+                  <div key={i} className="relative overflow-hidden group" style={{ aspectRatio: "4/3" }}>
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                      style={{ backgroundImage: `url(${p.img})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/90 via-[#0a0a0a]/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 p-3">
+                      <span className="rk-gold font-black text-xs" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.1em" }}>{p.step}</span>
+                      <p className="text-white text-xs font-semibold uppercase tracking-wider mt-0.5" style={{ letterSpacing: "0.08em", fontSize: "0.65rem" }}>{p.label}</p>
+                    </div>
+                    {i === 3 && (
+                      <div className="absolute top-2 right-2 bg-[#c9a84c] px-2 py-0.5">
+                        <span className="text-[#0f0f0f] text-xs font-black uppercase" style={{ fontSize: "0.6rem", letterSpacing: "0.1em" }}>Done</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
+              <p className="text-white/30 text-xs text-center mt-3 uppercase tracking-widest" style={{ letterSpacing: "0.12em", fontSize: "0.65rem" }}>From substrate to completion — one crew, one call</p>
             </div>
           </div>
         </div>
