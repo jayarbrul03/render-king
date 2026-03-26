@@ -105,3 +105,12 @@
 - [ ] Portfolio: more render variety and colour choices
 - [ ] MCK cross-ref section: add luxury microcement interior photo
 - [ ] Footer: add HYCHEM and IDEAL WORKS to supplier logos
+
+## v6 Builder Portal UX Fix — Matty
+- [x] Measurements section: white/light background, dark high-contrast inputs, clear labels, no text cut-off
+- [x] Apply conversion-first hard rule: every section scannable in 3 seconds, next action always obvious
+- [x] Form step progress must be visually dominant — builder knows exactly where they are
+- [x] Input fields: large, clearly labelled, high contrast, nothing getting cut off on mobile
+- [x] Section headings: strong hierarchy, not competing with dark background
+- [x] CTA button at bottom of each step must be unmissable — gold, full width on mobile
+- [x] Hard rule locked in: if any section doesn't enhance connection or retention, it gets reworked

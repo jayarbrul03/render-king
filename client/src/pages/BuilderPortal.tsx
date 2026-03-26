@@ -1,22 +1,26 @@
 /*
  * RENDER KING — Builder Portal / Submit Project
- * Dark Luxury Editorial design
- * 4-step form: Builder ID → Project Details → Upload Files → Submit
- * Server-side submission via tRPC → notifyOwner → instant email to Matty
+ * CONVERSION-FIRST DESIGN RULES:
+ * 1. Every step scannable in under 3 seconds
+ * 2. Inputs are ALWAYS high contrast — dark text on light background
+ * 3. Next action is ALWAYS unmissable — gold, full-width, dominant
+ * 4. Step progress is visually dominant — builder always knows where they are
+ * 5. Labels are large and clear — never competing with background
+ * 6. If it doesn't enhance connection or retention → it gets removed
  */
 import { useState, useRef } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Upload, CheckCircle, AlertCircle, X, FileText, ChevronRight } from "lucide-react";
+import { Upload, CheckCircle, AlertCircle, X, FileText, ChevronRight, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 const STEPS = [
-  { id: 1, label: "Your Details" },
-  { id: 2, label: "Project Info" },
-  { id: 3, label: "Upload Files" },
-  { id: 4, label: "Submit" },
+  { id: 1, label: "Your Details", sub: "Who are we quoting?" },
+  { id: 2, label: "Project Info", sub: "Tell us about the job" },
+  { id: 3, label: "Upload Files", sub: "Plans, specs, photos" },
+  { id: 4, label: "Review", sub: "Confirm and submit" },
 ];
 
 type FormData = {
@@ -53,6 +57,7 @@ const initialForm: FormData = {
 
 const serviceOptions = [
   "Acrylic Render",
+  "Texture Coating",
   "Hebel Supply & Install",
   "EPS Cladding System",
   "Specialty Finishes",
@@ -92,7 +97,7 @@ export default function BuilderPortal() {
       setSubmitted(true);
     },
     onError: (error) => {
-      toast.error("Submission failed. Please call us directly on (07) 3123 4567.");
+      toast.error("Submission failed. Please call us directly on 0468 041 477.");
       console.error("Submission error:", error);
     },
   });
@@ -143,6 +148,8 @@ export default function BuilderPortal() {
     });
   };
 
+  const progressPct = ((step - 1) / (STEPS.length - 1)) * 100;
+
   if (submitted) {
     return (
       <div className="min-h-screen bg-[#0f0f0f]">
@@ -150,9 +157,11 @@ export default function BuilderPortal() {
         <div className="min-h-screen flex items-center justify-center pt-20">
           <div className="container max-w-2xl text-center py-24">
             <div className="flex justify-center mb-8">
-              <CheckCircle size={64} className="rk-gold" />
+              <div className="w-20 h-20 bg-[#c9a84c]/15 flex items-center justify-center border border-[#c9a84c]/30">
+                <CheckCircle size={40} className="rk-gold" />
+              </div>
             </div>
-            <p className="rk-section-label mb-4">Submission Received</p>
+            <p className="rk-section-label mb-4">Project Received</p>
             <h1
               className="text-white font-black uppercase mb-6"
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.03em" }}
@@ -162,16 +171,18 @@ export default function BuilderPortal() {
             </h1>
             <div className="rk-divider mx-auto mb-8" />
             <p className="text-white/60 text-sm leading-relaxed mb-4" style={{ fontWeight: 300 }}>
-              Your project for <strong className="text-white">{form.suburb}</strong> has been submitted to the Render King estimating team. You'll receive a response within 1 business day.
+              Your project for <strong className="text-white">{form.suburb}</strong> has been sent directly to the Render King estimating team. Expect a response within 1 business day.
             </p>
             {submissionRef && (
-              <p className="text-white/40 text-xs mb-10" style={{ fontWeight: 300 }}>
-                Reference: {submissionRef} — {form.companyName}
+              <p className="text-white/35 text-xs mb-10 font-mono">
+                Ref: {submissionRef}
               </p>
             )}
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/" className="rk-btn-gold">Back to Home</Link>
-              <Link href="/portfolio" className="rk-btn-outline">View Our Work</Link>
+              <a href="tel:0468041477" className="rk-btn-outline flex items-center gap-2">
+                <Phone size={14} /> Call Us Now
+              </a>
             </div>
           </div>
         </div>
@@ -181,319 +192,428 @@ export default function BuilderPortal() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f]">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Navigation />
 
-      {/* Header */}
-      <section className="pt-32 pb-12 bg-[#0a0a0a] border-b border-white/8">
-        <div className="container">
-          <p className="rk-section-label mb-3">Builder Portal</p>
+      {/* ── DARK HEADER ── */}
+      <section className="pt-32 pb-10 bg-[#0a0a0a] border-b border-white/8">
+        <div className="container max-w-3xl">
+          <p className="rk-section-label mb-2">Builder Portal</p>
           <h1
-            className="text-white font-black uppercase mb-4"
-            style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}
+            className="text-white font-black uppercase mb-3"
+            style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", letterSpacing: "0.03em", lineHeight: 1.05 }}
           >
-            SUBMIT YOUR<br />
-            <span className="rk-gold">PROJECT.</span>
+            SUBMIT YOUR <span className="rk-gold">PROJECT.</span>
           </h1>
-          <p className="text-white/50 text-sm max-w-xl leading-relaxed" style={{ fontWeight: 300 }}>
-            Upload your plans, specs, or photos. Our estimating team will review and respond within 1 business day. All submissions are treated as confidential.
+          <p className="text-white/45 text-sm max-w-lg leading-relaxed" style={{ fontWeight: 300 }}>
+            Upload plans, specs, or photos. Our estimating team responds within 1 business day.
           </p>
         </div>
       </section>
 
-      {/* Step Indicator */}
-      <div className="bg-[#111] border-b border-white/8 sticky top-0 z-40">
-        <div className="container">
+      {/* ── STICKY STEP PROGRESS ── */}
+      <div className="sticky top-0 z-40 bg-[#111] border-b border-white/8 shadow-xl">
+        <div className="container max-w-3xl">
+          {/* Step tabs */}
           <div className="flex">
-            {STEPS.map((s) => (
-              <div
-                key={s.id}
-                className={`flex-1 py-4 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider border-b-2 transition-all ${
-                  step === s.id
-                    ? "border-[#c9a84c] text-[#c9a84c]"
-                    : step > s.id
-                    ? "border-[#c9a84c]/40 text-white/40"
-                    : "border-transparent text-white/25"
-                }`}
-                style={{ letterSpacing: "0.1em" }}
-              >
-                <span
-                  className={`w-5 h-5 flex items-center justify-center text-xs font-black ${
-                    step > s.id ? "bg-[#c9a84c]/30 text-[#c9a84c]" : step === s.id ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/10 text-white/30"
+            {STEPS.map((s) => {
+              const isActive = step === s.id;
+              const isDone = step > s.id;
+              return (
+                <div
+                  key={s.id}
+                  className={`flex-1 py-3 flex flex-col items-center justify-center gap-0.5 border-b-2 transition-all ${
+                    isActive
+                      ? "border-[#c9a84c]"
+                      : isDone
+                      ? "border-[#c9a84c]/50"
+                      : "border-transparent"
                   }`}
                 >
-                  {step > s.id ? "✓" : s.id}
-                </span>
-                <span className="hidden sm:inline">{s.label}</span>
-              </div>
-            ))}
+                  <div className="flex items-center gap-1.5">
+                    <span
+                      className={`w-5 h-5 flex items-center justify-center text-xs font-black transition-all ${
+                        isDone
+                          ? "bg-[#c9a84c]/25 text-[#c9a84c]"
+                          : isActive
+                          ? "bg-[#c9a84c] text-[#0f0f0f]"
+                          : "bg-white/8 text-white/25"
+                      }`}
+                    >
+                      {isDone ? "✓" : s.id}
+                    </span>
+                    <span
+                      className={`text-xs font-bold uppercase hidden sm:inline transition-all`}
+                      style={{
+                        letterSpacing: "0.1em",
+                        color: isActive ? "#c9a84c" : isDone ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.2)",
+                      }}
+                    >
+                      {s.label}
+                    </span>
+                  </div>
+                  <span
+                    className="text-xs hidden md:block"
+                    style={{ color: "rgba(255,255,255,0.2)", fontWeight: 300, fontSize: "0.65rem" }}
+                  >
+                    {s.sub}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+          {/* Progress bar */}
+          <div className="h-0.5 bg-white/5">
+            <div
+              className="h-full bg-[#c9a84c] transition-all duration-500"
+              style={{ width: `${progressPct}%` }}
+            />
           </div>
         </div>
       </div>
 
-      {/* Form Body */}
-      <div className="container py-16 max-w-3xl">
+      {/* ── FORM BODY — WHITE CARD ON DARK BG ── */}
+      <div className="container max-w-3xl py-10 pb-20">
 
-        {/* STEP 1 — Your Details */}
+        {/* ── STEP 1: YOUR DETAILS ── */}
         {step === 1 && (
-          <div className="space-y-8">
-            <div>
-              <p className="rk-section-label mb-2">Step 1 of 4</p>
-              <h2 className="text-white font-black uppercase text-2xl" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.04em" }}>
-                YOUR DETAILS
-              </h2>
-              <div className="rk-divider mt-3" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FormField label="Company / Builder Name *" value={form.companyName} onChange={(v) => update("companyName", v)} placeholder="e.g. Ausbuild Pty Ltd" />
-              <FormField label="Your Name *" value={form.contactName} onChange={(v) => update("contactName", v)} placeholder="e.g. John Smith" />
-              <FormField label="Phone *" value={form.phone} onChange={(v) => update("phone", v)} placeholder="0400 000 000" type="tel" />
-              <FormField label="Email *" value={form.email} onChange={(v) => update("email", v)} placeholder="john@builder.com.au" type="email" />
-            </div>
-            <div>
-              <label className="rk-section-label block mb-3">Builder Type</label>
-              <div className="flex flex-wrap gap-2">
-                {builderTypes.map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => update("builderType", t)}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
-                      form.builderType === t
-                        ? "border-[#c9a84c] bg-[#c9a84c]/10 text-[#c9a84c]"
-                        : "border-white/15 text-white/50 hover:border-white/30 hover:text-white/80"
-                    }`}
-                    style={{ letterSpacing: "0.1em" }}
-                  >
-                    {t}
-                  </button>
-                ))}
+          <div className="bg-white rounded-none shadow-2xl overflow-hidden">
+            {/* Card header */}
+            <div className="bg-[#0f0f0f] px-8 py-5 border-b border-white/8">
+              <div className="flex items-center gap-3">
+                <span className="w-7 h-7 bg-[#c9a84c] flex items-center justify-center text-[#0f0f0f] text-xs font-black">1</span>
+                <div>
+                  <h2 className="text-white font-black uppercase text-lg" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.06em" }}>
+                    YOUR DETAILS
+                  </h2>
+                  <p className="text-white/40 text-xs" style={{ fontWeight: 300 }}>Who are we quoting?</p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
-
-        {/* STEP 2 — Project Info */}
-        {step === 2 && (
-          <div className="space-y-8">
-            <div>
-              <p className="rk-section-label mb-2">Step 2 of 4</p>
-              <h2 className="text-white font-black uppercase text-2xl" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.04em" }}>
-                PROJECT DETAILS
-              </h2>
-              <div className="rk-divider mt-3" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="md:col-span-2">
-                <FormField label="Project Address *" value={form.projectAddress} onChange={(v) => update("projectAddress", v)} placeholder="123 Example Street" />
+            {/* Card body — white background, dark inputs */}
+            <div className="p-8 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <LightField label="Company / Builder Name *" value={form.companyName} onChange={(v) => update("companyName", v)} placeholder="e.g. Ausbuild Pty Ltd" />
+                <LightField label="Your Name *" value={form.contactName} onChange={(v) => update("contactName", v)} placeholder="e.g. John Smith" />
+                <LightField label="Phone Number *" value={form.phone} onChange={(v) => update("phone", v)} placeholder="0400 000 000" type="tel" />
+                <LightField label="Email Address *" value={form.email} onChange={(v) => update("email", v)} placeholder="john@builder.com.au" type="email" />
               </div>
-              <FormField label="Suburb *" value={form.suburb} onChange={(v) => update("suburb", v)} placeholder="e.g. Coomera" />
-              <FormField label="Estimated Wall Area (m²)" value={form.wallArea} onChange={(v) => update("wallArea", v)} placeholder="e.g. 450" type="number" />
-              <FormField label="Preferred Start Date" value={form.startDate} onChange={(v) => update("startDate", v)} placeholder="" type="date" />
-            </div>
-            <div>
-              <label className="rk-section-label block mb-3">Project Type</label>
-              <div className="flex flex-wrap gap-2">
-                {projectTypes.map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => update("projectType", t)}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
-                      form.projectType === t
-                        ? "border-[#c9a84c] bg-[#c9a84c]/10 text-[#c9a84c]"
-                        : "border-white/15 text-white/50 hover:border-white/30 hover:text-white/80"
-                    }`}
-                    style={{ letterSpacing: "0.1em" }}
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <label className="rk-section-label block mb-3">Services Required * (select all that apply)</label>
-              <div className="flex flex-wrap gap-2">
-                {serviceOptions.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => toggleService(s)}
-                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
-                      form.services.includes(s)
-                        ? "border-[#c9a84c] bg-[#c9a84c]/10 text-[#c9a84c]"
-                        : "border-white/15 text-white/50 hover:border-white/30 hover:text-white/80"
-                    }`}
-                    style={{ letterSpacing: "0.1em" }}
-                  >
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <label className="rk-section-label block mb-3">Additional Notes</label>
-              <textarea
-                value={form.notes}
-                onChange={(e) => update("notes", e.target.value)}
-                placeholder="Any specific requirements, access notes, colour preferences, or questions for our estimator..."
-                rows={4}
-                className="w-full bg-[#141414] border border-white/10 text-white/80 text-sm p-4 focus:outline-none focus:border-[#c9a84c] transition-colors resize-none"
-                style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 300 }}
-              />
-            </div>
-          </div>
-        )}
 
-        {/* STEP 3 — Upload Files */}
-        {step === 3 && (
-          <div className="space-y-8">
-            <div>
-              <p className="rk-section-label mb-2">Step 3 of 4</p>
-              <h2 className="text-white font-black uppercase text-2xl" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.04em" }}>
-                UPLOAD FILES
-              </h2>
-              <div className="rk-divider mt-3" />
-              <p className="text-white/50 text-sm mt-4" style={{ fontWeight: 300 }}>
-                Upload plans, specs, photos, or any relevant documents. PDF, JPG, PNG, DWG accepted. Max 20MB per file.
-              </p>
-            </div>
-
-            {/* Drop Zone */}
-            <div
-              onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-              onDragLeave={() => setDragOver(false)}
-              onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFiles(e.dataTransfer.files); }}
-              onClick={() => fileInputRef.current?.click()}
-              className={`border-2 border-dashed p-12 text-center cursor-pointer transition-all ${
-                dragOver
-                  ? "border-[#c9a84c] bg-[#c9a84c]/5"
-                  : "border-white/15 hover:border-white/30 bg-[#141414]"
-              }`}
-            >
-              <Upload size={32} className={`mx-auto mb-4 ${dragOver ? "rk-gold" : "text-white/30"}`} />
-              <p className="text-white/60 text-sm mb-2" style={{ fontWeight: 300 }}>
-                Drag & drop files here, or <span className="rk-gold font-semibold">click to browse</span>
-              </p>
-              <p className="text-white/30 text-xs">Plans, specs, photos, DWG files — up to 20MB each</p>
-              <input
-                ref={fileInputRef}
-                type="file"
-                multiple
-                accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx"
-                className="hidden"
-                onChange={(e) => handleFiles(e.target.files)}
-              />
-            </div>
-
-            {/* File List */}
-            {form.files.length > 0 && (
-              <div className="space-y-2">
-                <p className="rk-section-label mb-3">{form.files.length} File{form.files.length !== 1 ? "s" : ""} Attached</p>
-                {form.files.map((f, i) => (
-                  <div key={i} className="flex items-center justify-between bg-[#141414] border border-white/8 px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      <FileText size={16} className="rk-gold" />
-                      <div>
-                        <p className="text-white text-sm font-medium">{f.name}</p>
-                        <p className="text-white/40 text-xs">{(f.size / 1024).toFixed(0)} KB</p>
-                      </div>
-                    </div>
-                    <button onClick={() => removeFile(i)} className="text-white/30 hover:text-white/70 transition-colors">
-                      <X size={16} />
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-3" style={{ letterSpacing: "0.12em" }}>
+                  Builder Type <span className="text-gray-400 font-normal normal-case tracking-normal">(optional)</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {builderTypes.map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => update("builderType", t)}
+                      className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border-2 transition-all ${
+                        form.builderType === t
+                          ? "border-[#c9a84c] bg-[#c9a84c] text-[#0f0f0f]"
+                          : "border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-700 bg-white"
+                      }`}
+                      style={{ letterSpacing: "0.08em" }}
+                    >
+                      {t}
                     </button>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            )}
 
-            <div className="rk-card">
-              <p className="rk-section-label mb-2">No files yet?</p>
-              <p className="text-white/50 text-sm" style={{ fontWeight: 300 }}>
-                That's fine. You can still submit and our team will follow up to collect plans. Alternatively, email files directly to{" "}
-                <a href="mailto:estimating@renderking.com.au" className="rk-gold hover:underline">estimating@renderking.com.au</a>
-              </p>
+              {/* CTA */}
+              <div className="pt-2">
+                <button
+                  onClick={() => setStep(2)}
+                  disabled={!canProceed()}
+                  className="w-full py-4 bg-[#c9a84c] text-[#0f0f0f] font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#b8963d] transition-colors"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  Continue to Project Details <ChevronRight size={16} />
+                </button>
+                {!canProceed() && (
+                  <p className="text-center text-xs text-gray-400 mt-2">Fill in Company, Name, Phone and Email to continue</p>
+                )}
+              </div>
             </div>
           </div>
         )}
 
-        {/* STEP 4 — Review & Submit */}
-        {step === 4 && (
-          <div className="space-y-8">
-            <div>
-              <p className="rk-section-label mb-2">Step 4 of 4</p>
-              <h2 className="text-white font-black uppercase text-2xl" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.04em" }}>
-                REVIEW & SUBMIT
-              </h2>
-              <div className="rk-divider mt-3" />
+        {/* ── STEP 2: PROJECT INFO ── */}
+        {step === 2 && (
+          <div className="bg-white rounded-none shadow-2xl overflow-hidden">
+            <div className="bg-[#0f0f0f] px-8 py-5 border-b border-white/8">
+              <div className="flex items-center gap-3">
+                <span className="w-7 h-7 bg-[#c9a84c] flex items-center justify-center text-[#0f0f0f] text-xs font-black">2</span>
+                <div>
+                  <h2 className="text-white font-black uppercase text-lg" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.06em" }}>
+                    PROJECT DETAILS
+                  </h2>
+                  <p className="text-white/40 text-xs" style={{ fontWeight: 300 }}>Tell us about the job</p>
+                </div>
+              </div>
             </div>
+            <div className="p-8 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="md:col-span-2">
+                  <LightField label="Project Address *" value={form.projectAddress} onChange={(v) => update("projectAddress", v)} placeholder="123 Example Street" />
+                </div>
+                <LightField label="Suburb *" value={form.suburb} onChange={(v) => update("suburb", v)} placeholder="e.g. Coomera" />
+                <LightField
+                  label="Estimated Wall Area (m²)"
+                  value={form.wallArea}
+                  onChange={(v) => update("wallArea", v)}
+                  placeholder="e.g. 450"
+                  type="number"
+                  hint="Approximate is fine — we confirm on site"
+                />
+                <LightField label="Preferred Start Date" value={form.startDate} onChange={(v) => update("startDate", v)} placeholder="" type="date" />
+              </div>
 
-            {/* Summary */}
-            <div className="space-y-4">
-              <ReviewBlock title="Your Details">
-                <ReviewRow label="Company" value={form.companyName} />
-                <ReviewRow label="Contact" value={form.contactName} />
-                <ReviewRow label="Phone" value={form.phone} />
-                <ReviewRow label="Email" value={form.email} />
-                {form.builderType && <ReviewRow label="Type" value={form.builderType} />}
-              </ReviewBlock>
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-3" style={{ letterSpacing: "0.12em" }}>
+                  Project Type <span className="text-gray-400 font-normal normal-case tracking-normal">(optional)</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {projectTypes.map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => update("projectType", t)}
+                      className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border-2 transition-all ${
+                        form.projectType === t
+                          ? "border-[#c9a84c] bg-[#c9a84c] text-[#0f0f0f]"
+                          : "border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-700 bg-white"
+                      }`}
+                      style={{ letterSpacing: "0.08em" }}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-              <ReviewBlock title="Project Details">
-                <ReviewRow label="Address" value={`${form.projectAddress}, ${form.suburb}`} />
-                {form.projectType && <ReviewRow label="Type" value={form.projectType} />}
-                <ReviewRow label="Services" value={form.services.join(", ")} />
-                {form.wallArea && <ReviewRow label="Wall Area" value={`${form.wallArea} m²`} />}
-                {form.startDate && <ReviewRow label="Start Date" value={form.startDate} />}
-                {form.notes && <ReviewRow label="Notes" value={form.notes} />}
-              </ReviewBlock>
-
-              <ReviewBlock title="Files">
-                {form.files.length === 0 ? (
-                  <p className="text-white/40 text-sm" style={{ fontWeight: 300 }}>No files attached</p>
-                ) : (
-                  form.files.map((f, i) => (
-                    <ReviewRow key={i} label={`File ${i + 1}`} value={f.name} />
-                  ))
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-1" style={{ letterSpacing: "0.12em" }}>
+                  Services Required *
+                </label>
+                <p className="text-xs text-gray-400 mb-3" style={{ fontWeight: 300 }}>Select all that apply</p>
+                <div className="flex flex-wrap gap-2">
+                  {serviceOptions.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => toggleService(s)}
+                      className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border-2 transition-all ${
+                        form.services.includes(s)
+                          ? "border-[#c9a84c] bg-[#c9a84c] text-[#0f0f0f]"
+                          : "border-gray-200 text-gray-500 hover:border-gray-400 hover:text-gray-700 bg-white"
+                      }`}
+                      style={{ letterSpacing: "0.08em" }}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+                {form.services.length === 0 && (
+                  <p className="text-xs text-red-400 mt-2">Select at least one service to continue</p>
                 )}
-              </ReviewBlock>
-            </div>
+              </div>
 
-            <div className="rk-card border-l-[#c9a84c]">
-              <div className="flex items-start gap-3">
-                <AlertCircle size={16} className="rk-gold mt-0.5 shrink-0" />
-                <p className="text-white/60 text-sm leading-relaxed" style={{ fontWeight: 300 }}>
-                  By submitting, your project details will be sent directly to the Render King estimating team. We'll respond within 1 business day. All information is kept strictly confidential.
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2" style={{ letterSpacing: "0.12em" }}>
+                  Additional Notes <span className="text-gray-400 font-normal normal-case tracking-normal">(optional)</span>
+                </label>
+                <textarea
+                  value={form.notes}
+                  onChange={(e) => update("notes", e.target.value)}
+                  placeholder="Specific requirements, access notes, colour preferences, or questions for our estimator..."
+                  rows={4}
+                  className="w-full bg-gray-50 border-2 border-gray-200 text-gray-800 text-sm px-4 py-3 focus:outline-none focus:border-[#c9a84c] transition-colors resize-none placeholder:text-gray-400"
+                  style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 400 }}
+                />
+              </div>
+
+              <div className="flex gap-3 pt-2">
+                <button
+                  onClick={() => setStep(1)}
+                  className="px-6 py-4 border-2 border-gray-200 text-gray-500 font-bold uppercase text-xs tracking-widest hover:border-gray-400 hover:text-gray-700 transition-colors"
+                  style={{ letterSpacing: "0.12em" }}
+                >
+                  ← Back
+                </button>
+                <button
+                  onClick={() => setStep(3)}
+                  disabled={!canProceed()}
+                  className="flex-1 py-4 bg-[#c9a84c] text-[#0f0f0f] font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#b8963d] transition-colors"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  Continue to Upload Files <ChevronRight size={16} />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── STEP 3: UPLOAD FILES ── */}
+        {step === 3 && (
+          <div className="bg-white rounded-none shadow-2xl overflow-hidden">
+            <div className="bg-[#0f0f0f] px-8 py-5 border-b border-white/8">
+              <div className="flex items-center gap-3">
+                <span className="w-7 h-7 bg-[#c9a84c] flex items-center justify-center text-[#0f0f0f] text-xs font-black">3</span>
+                <div>
+                  <h2 className="text-white font-black uppercase text-lg" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.06em" }}>
+                    UPLOAD FILES
+                  </h2>
+                  <p className="text-white/40 text-xs" style={{ fontWeight: 300 }}>Plans, specs, photos — optional but helpful</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-8 space-y-6">
+              {/* Drop Zone */}
+              <div
+                onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                onDragLeave={() => setDragOver(false)}
+                onDrop={(e) => { e.preventDefault(); setDragOver(false); handleFiles(e.dataTransfer.files); }}
+                onClick={() => fileInputRef.current?.click()}
+                className={`border-2 border-dashed p-12 text-center cursor-pointer transition-all ${
+                  dragOver
+                    ? "border-[#c9a84c] bg-[#c9a84c]/5"
+                    : "border-gray-200 hover:border-gray-400 bg-gray-50"
+                }`}
+              >
+                <Upload size={36} className={`mx-auto mb-4 ${dragOver ? "text-[#c9a84c]" : "text-gray-300"}`} />
+                <p className="text-gray-600 text-sm mb-1 font-medium">
+                  Drag & drop files here, or <span className="text-[#c9a84c] font-bold">click to browse</span>
+                </p>
+                <p className="text-gray-400 text-xs">Plans, specs, photos, DWG files — up to 20MB each</p>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  multiple
+                  accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx"
+                  className="hidden"
+                  onChange={(e) => handleFiles(e.target.files)}
+                />
+              </div>
+
+              {/* File List */}
+              {form.files.length > 0 && (
+                <div className="space-y-2">
+                  <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3" style={{ letterSpacing: "0.12em" }}>
+                    {form.files.length} File{form.files.length !== 1 ? "s" : ""} Attached
+                  </p>
+                  {form.files.map((f, i) => (
+                    <div key={i} className="flex items-center justify-between bg-gray-50 border border-gray-200 px-4 py-3">
+                      <div className="flex items-center gap-3">
+                        <FileText size={16} className="text-[#c9a84c]" />
+                        <div>
+                          <p className="text-gray-800 text-sm font-medium">{f.name}</p>
+                          <p className="text-gray-400 text-xs">{(f.size / 1024).toFixed(0)} KB</p>
+                        </div>
+                      </div>
+                      <button onClick={() => removeFile(i)} className="text-gray-300 hover:text-gray-600 transition-colors">
+                        <X size={16} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* No files note */}
+              <div className="bg-gray-50 border border-gray-200 px-5 py-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1" style={{ letterSpacing: "0.1em" }}>No files? No problem.</p>
+                <p className="text-gray-500 text-sm" style={{ fontWeight: 300 }}>
+                  Submit now and our team will follow up to collect plans. Or email directly to{" "}
+                  <a href="mailto:projects@renderrender.com.au" className="text-[#c9a84c] font-semibold hover:underline">projects@renderrender.com.au</a>
                 </p>
               </div>
-            </div>
 
-            <button
-              onClick={handleSubmit}
-              disabled={submitMutation.isPending}
-              className="rk-btn-gold w-full text-center text-sm py-4 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {submitMutation.isPending ? "Submitting..." : "Submit Project to Render King →"}
-            </button>
+              <div className="flex gap-3 pt-2">
+                <button
+                  onClick={() => setStep(2)}
+                  className="px-6 py-4 border-2 border-gray-200 text-gray-500 font-bold uppercase text-xs tracking-widest hover:border-gray-400 hover:text-gray-700 transition-colors"
+                  style={{ letterSpacing: "0.12em" }}
+                >
+                  ← Back
+                </button>
+                <button
+                  onClick={() => setStep(4)}
+                  className="flex-1 py-4 bg-[#c9a84c] text-[#0f0f0f] font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 hover:bg-[#b8963d] transition-colors"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  Review & Submit <ChevronRight size={16} />
+                </button>
+              </div>
+            </div>
           </div>
         )}
 
-        {/* Navigation Buttons */}
-        {step < 4 && (
-          <div className="flex justify-between mt-12 pt-8 border-t border-white/8">
-            {step > 1 ? (
-              <button
-                onClick={() => setStep(step - 1)}
-                className="rk-btn-outline text-xs"
-              >
-                ← Back
-              </button>
-            ) : (
-              <div />
-            )}
-            <button
-              onClick={() => setStep(step + 1)}
-              disabled={!canProceed()}
-              className="rk-btn-gold text-xs disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              {step === 3 ? "Review Submission" : "Continue"} <ChevronRight size={14} />
-            </button>
+        {/* ── STEP 4: REVIEW & SUBMIT ── */}
+        {step === 4 && (
+          <div className="bg-white rounded-none shadow-2xl overflow-hidden">
+            <div className="bg-[#0f0f0f] px-8 py-5 border-b border-white/8">
+              <div className="flex items-center gap-3">
+                <span className="w-7 h-7 bg-[#c9a84c] flex items-center justify-center text-[#0f0f0f] text-xs font-black">4</span>
+                <div>
+                  <h2 className="text-white font-black uppercase text-lg" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.06em" }}>
+                    REVIEW & SUBMIT
+                  </h2>
+                  <p className="text-white/40 text-xs" style={{ fontWeight: 300 }}>Confirm your details before sending</p>
+                </div>
+              </div>
+            </div>
+            <div className="p-8 space-y-5">
+              <LightReviewBlock title="Your Details">
+                <LightReviewRow label="Company" value={form.companyName} />
+                <LightReviewRow label="Contact" value={form.contactName} />
+                <LightReviewRow label="Phone" value={form.phone} />
+                <LightReviewRow label="Email" value={form.email} />
+                {form.builderType && <LightReviewRow label="Type" value={form.builderType} />}
+              </LightReviewBlock>
+
+              <LightReviewBlock title="Project Details">
+                <LightReviewRow label="Address" value={`${form.projectAddress}, ${form.suburb}`} />
+                {form.projectType && <LightReviewRow label="Type" value={form.projectType} />}
+                <LightReviewRow label="Services" value={form.services.join(", ")} />
+                {form.wallArea && <LightReviewRow label="Wall Area" value={`${form.wallArea} m²`} />}
+                {form.startDate && <LightReviewRow label="Start Date" value={form.startDate} />}
+                {form.notes && <LightReviewRow label="Notes" value={form.notes} />}
+              </LightReviewBlock>
+
+              <LightReviewBlock title="Files">
+                {form.files.length === 0 ? (
+                  <p className="text-gray-400 text-sm">No files attached — team will follow up</p>
+                ) : (
+                  form.files.map((f, i) => (
+                    <LightReviewRow key={i} label={`File ${i + 1}`} value={f.name} />
+                  ))
+                )}
+              </LightReviewBlock>
+
+              <div className="bg-amber-50 border border-amber-200 px-5 py-4 flex items-start gap-3">
+                <AlertCircle size={16} className="text-amber-500 mt-0.5 shrink-0" />
+                <p className="text-gray-600 text-sm leading-relaxed" style={{ fontWeight: 300 }}>
+                  Your project details will be sent directly to the Render King estimating team. We'll respond within 1 business day. All information is kept strictly confidential.
+                </p>
+              </div>
+
+              <div className="flex gap-3 pt-2">
+                <button
+                  onClick={() => setStep(3)}
+                  className="px-6 py-4 border-2 border-gray-200 text-gray-500 font-bold uppercase text-xs tracking-widest hover:border-gray-400 hover:text-gray-700 transition-colors"
+                  style={{ letterSpacing: "0.12em" }}
+                >
+                  ← Back
+                </button>
+                <button
+                  onClick={handleSubmit}
+                  disabled={submitMutation.isPending}
+                  className="flex-1 py-5 bg-[#c9a84c] text-[#0f0f0f] font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#b8963d] transition-colors"
+                  style={{ letterSpacing: "0.14em" }}
+                >
+                  {submitMutation.isPending ? "Sending to Render King..." : "Submit Project to Render King →"}
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -503,42 +623,48 @@ export default function BuilderPortal() {
   );
 }
 
-function FormField({
-  label, value, onChange, placeholder, type = "text",
+// ── LIGHT FORM FIELD — dark text on white/gray background ──
+function LightField({
+  label, value, onChange, placeholder, type = "text", hint,
 }: {
-  label: string; value: string; onChange: (v: string) => void; placeholder: string; type?: string;
+  label: string; value: string; onChange: (v: string) => void; placeholder: string; type?: string; hint?: string;
 }) {
   return (
     <div>
-      <label className="rk-section-label block mb-2">{label}</label>
+      <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-1.5" style={{ letterSpacing: "0.12em" }}>
+        {label}
+      </label>
+      {hint && <p className="text-xs text-gray-400 mb-1.5" style={{ fontWeight: 300 }}>{hint}</p>}
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-[#141414] border border-white/10 text-white/80 text-sm px-4 py-3 focus:outline-none focus:border-[#c9a84c] transition-colors placeholder:text-white/20"
-        style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 300 }}
+        className="w-full bg-gray-50 border-2 border-gray-200 text-gray-800 text-sm px-4 py-3 focus:outline-none focus:border-[#c9a84c] transition-colors placeholder:text-gray-400"
+        style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 400 }}
       />
     </div>
   );
 }
 
-function ReviewBlock({ title, children }: { title: string; children: React.ReactNode }) {
+// ── LIGHT REVIEW BLOCK ──
+function LightReviewBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-[#141414] border border-white/8">
-      <div className="px-5 py-3 border-b border-white/8">
-        <p className="rk-section-label">{title}</p>
+    <div className="border border-gray-200 overflow-hidden">
+      <div className="bg-gray-50 px-5 py-2.5 border-b border-gray-200">
+        <p className="text-xs font-bold uppercase tracking-widest text-gray-500" style={{ letterSpacing: "0.12em" }}>{title}</p>
       </div>
       <div className="px-5 py-4 space-y-2">{children}</div>
     </div>
   );
 }
 
-function ReviewRow({ label, value }: { label: string; value: string }) {
+// ── LIGHT REVIEW ROW ──
+function LightReviewRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex gap-4">
-      <span className="text-white/30 text-xs w-24 shrink-0 pt-0.5" style={{ fontWeight: 600 }}>{label}</span>
-      <span className="text-white/70 text-sm" style={{ fontWeight: 300 }}>{value}</span>
+      <span className="text-gray-400 text-xs w-24 shrink-0 pt-0.5 font-semibold uppercase" style={{ letterSpacing: "0.06em" }}>{label}</span>
+      <span className="text-gray-700 text-sm" style={{ fontWeight: 400 }}>{value}</span>
     </div>
   );
 }
