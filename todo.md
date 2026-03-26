@@ -94,3 +94,14 @@
 - [ ] Process flow section — replace crew photo with fading sequence: AAC substrate → basecoat → finish render → completed luxury home
 - [ ] No Render Render branding visible in process photos
 - [ ] Lock in RENDER DONE RIGHT. EVERY TIME. as brand slogan
+
+## v5 Visual Editor Feedback — Matty
+- [ ] Generate: Hebel full AAC sheets on house exterior (no frames visible)
+- [ ] Generate: Specialty finish — microcement cloudy texture, luxury landscaping
+- [ ] Generate: MCK-style luxury interior — concrete coloured microcement, kitchen to outdoors, industrial
+- [ ] Services: Render photos first (4 render photos), Hebel/EPS moved down as add-ons
+- [ ] Hebel copy: "We work with selected builders on the whole system — focused delivery"
+- [ ] Add AI integration messaging: leading with AI, safety, job reporting, customer communication
+- [ ] Portfolio: more render variety and colour choices
+- [ ] MCK cross-ref section: add luxury microcement interior photo
+- [ ] Footer: add HYCHEM and IDEAL WORKS to supplier logos

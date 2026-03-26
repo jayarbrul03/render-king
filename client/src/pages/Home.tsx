@@ -15,19 +15,21 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Clock, Users, Phone, Zap, Shield, Award, Star } from "lucide-react";
 
-// v4 CDN images
+// v5 CDN images
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-hero-v4-premium-kdDLtzCBsKFqnPhHy8aUQV.webp";
 const PROCESS_1 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-1-aac-7dTG3Bu8X4Ym435zuUn4vQ.webp";
 const PROCESS_2 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-2-basecoat-FEz4Qu65L6RV5A9SfPSKN9.webp";
 const PROCESS_3 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-3-finish-6MLu7EbQV4jh5e2ZPzwwUk.webp";
 const PROCESS_4 = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-process-4-complete-cEShehPmaHYGxUNrCLcw6H.webp";
 const ESTATE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-portfolio-estate_5d030290.jpg";
-const CREW_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v2-crew-85TRdReUj7gJdkTizPmksY.webp";
 const TEXTURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v2-texture-dYRg9c2L9YQeJmNNKeihRX.webp";
 const LOWSET_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-portfolio-lowset_aac85414.jpg";
 const LUXURY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-portfolio-luxury_bbf00cbd.jpg";
 const DOUBLE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-portfolio-double_28fce4a5.jpg";
-const HEBEL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-portfolio-hebel-complete_86ea9c6b.jpg";
+// v5 new images
+const HEBEL_EXT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v5-hebel-ext-A2fAKtWLE56ZGerSS5wATV.webp";
+const SPECIALTY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v5-specialty-nLnV5V4SxfyvNMqaujRPMB.webp";
+const MCK_INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v5-mck-interior-AtK2iELuNMJStqtcCvEnm9.webp";
 
 const stats = [
   { number: "10,000+", label: "Projects Completed" },
@@ -56,7 +58,7 @@ const coreServices = [
     title: "Specialty Finishes",
     desc: "Premium external finishes including Dulux Acratex premium systems, combined render and paint packages, and external microcement on facades, pools, and outdoor areas.",
     href: "/services/specialty-finishes",
-    img: LUXURY_IMG,
+    img: SPECIALTY_IMG,
     badge: "Premium Finish",
   },
 ];
@@ -64,9 +66,9 @@ const coreServices = [
 const addOnServices = [
   {
     title: "Hebel Supply & Install",
-    desc: "CSR Hebel PowerPanelXL supply and installation for residential and low-rise. One subcontractor for your entire wall system — panel supply, install, and render.",
+    desc: "We work with selected builders on the whole wall system — Hebel supply, install, and render under one subcontractor. Focused delivery, no handoff gaps.",
     href: "/services/hebel-installation",
-    img: HEBEL_IMG,
+    img: HEBEL_EXT_IMG,
   },
   {
     title: "EPS Cladding Systems",
@@ -133,7 +135,7 @@ const portfolioItems = [
   { img: LOWSET_IMG, label: "Low-Set Residential — Springfield" },
   { img: LUXURY_IMG, label: "Luxury Custom Build — Gold Coast" },
   { img: HERO_IMG, label: "Premium Architectural Render — Robina" },
-  { img: HEBEL_IMG, label: "Hebel External Install — Ipswich" },
+  { img: HEBEL_EXT_IMG, label: "Hebel External Install — Ipswich" },
 ];
 
 function useScrollAnimation() {
@@ -220,6 +222,28 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── AI INTEGRATION STRIP ── */}
+      <section className="py-10 bg-[#0a0a0a] border-b border-white/6">
+        <div className="container">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 flex items-center justify-center border border-[#c9a84c]/40 shrink-0">
+                <Zap size={14} className="rk-gold" />
+              </div>
+              <div>
+                <p className="text-white font-bold text-xs uppercase tracking-widest mb-0.5" style={{ letterSpacing: "0.14em" }}>Leading with AI Integration</p>
+                <p className="text-white/45 text-xs" style={{ fontWeight: 300 }}>Real-time job reporting, automated customer communication, digital safety compliance, and live project tracking — built into every job.</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-6 shrink-0">
+              {["AI Job Reporting", "Safety Compliant", "Digital PSRAs", "Live Communication"].map((tag, i) => (
+                <span key={i} className="text-white/30 text-xs font-bold uppercase tracking-widest" style={{ letterSpacing: "0.12em" }}>{tag}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -543,27 +567,39 @@ export default function Home() {
       </section>
 
       {/* ── MICRO CEMENT KING CROSS-REFERENCE ── */}
-      <section className="py-14 bg-[#0a0a0a] border-y border-white/6">
-        <div className="container">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="max-w-2xl">
-              <p className="rk-section-label mb-3">Premium Internal Finishes</p>
-              <h3
-                className="text-white font-black uppercase mb-3"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "1.4rem", letterSpacing: "0.04em" }}
-              >
-                INTERNAL POLISHED WALLS, FLOORS & BESPOKE SURFACES.
-              </h3>
-              <p className="text-white/50 text-sm leading-relaxed" style={{ fontWeight: 300 }}>
-                Our Render King team handles external microcement on facades, pools, and outdoor areas. For internal polished walls, floors, and luxury architectural surfaces, our brand{" "}
-                <span className="text-white font-semibold">Micro Cement King</span> delivers Queensland's finest internal microcement finishes. Same ownership. Same standard. Different speciality.
-              </p>
-            </div>
+      <section className="py-0 bg-[#0a0a0a] border-y border-white/6 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Image side */}
+          <div
+            className="relative min-h-[320px] lg:min-h-[420px] bg-cover bg-center"
+            style={{ backgroundImage: `url(${MCK_INTERIOR_IMG})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0a0a0a]/60" />
+            <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[#0a0a0a]/90 to-transparent" />
+          </div>
+          {/* Text side */}
+          <div className="flex flex-col justify-center px-8 py-16 lg:px-16">
+            <p className="rk-section-label mb-3">Premium Internal Finishes</p>
+            <h3
+              className="text-white font-black uppercase mb-4"
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.3rem, 3vw, 2rem)", letterSpacing: "0.04em", lineHeight: 1.1 }}
+            >
+              SEAMLESS FLOORS.
+              <br />
+              <span className="rk-gold">POLISHED WALLS.</span>
+              <br />
+              BESPOKE SURFACES.
+            </h3>
+            <div className="rk-divider mb-6" />
+            <p className="text-white/55 text-sm leading-relaxed mb-8" style={{ fontWeight: 300 }}>
+              Our Render King team delivers external microcement on facades, pools, and outdoor areas. For internal polished walls, floors, and luxury architectural surfaces,{" "}
+              <span className="text-white font-semibold">Micro Cement King</span> is Queensland's premier internal microcement studio. Same ownership. Same standard. Different speciality.
+            </p>
             <a
-              href="https://microcement.king"
+              href="https://microcementking.com.au"
               target="_blank"
               rel="noopener noreferrer"
-              className="rk-btn-outline shrink-0"
+              className="rk-btn-outline self-start"
             >
               Visit Micro Cement King →
             </a>

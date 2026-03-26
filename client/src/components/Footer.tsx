@@ -31,6 +31,8 @@ export default function Footer() {
             <SupplierBadge name="Ensulite" />
             <SupplierBadge name="Rockcote" />
             <SupplierBadge name="Hi-Cam" />
+            <SupplierBadge name="Hychem" />
+            <SupplierBadge name="Ideal Works" />
           </div>
         </div>
       </div>
@@ -139,7 +141,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={14} className="rk-gold mt-0.5 shrink-0" />
                 <span className="text-white/60 text-sm" style={{ fontWeight: 300 }}>
-                  Greater Brisbane — Morayfield to Ipswich to Gold Coast. Queensland-wide.
+                  Greater Brisbane, Morayfield to Ipswich to Gold Coast. Queensland Wide.
                 </span>
               </li>
             </ul>
