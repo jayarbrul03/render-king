@@ -174,7 +174,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#0a0a0a]/30 to-transparent" />
 
         <div className="relative container mt-auto pb-20 lg:pb-28" style={{paddingTop: '80px', marginTop: '130px'}}>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl" style={{paddingTop: '140px', paddingBottom: '100px'}}>
             <p className="rk-section-label mb-5">Queensland's Largest Rendering Operation</p>
             <h1
               className="text-white font-black uppercase mb-6"
