@@ -172,7 +172,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-[#0a0a0a]/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#0a0a0a]/30 to-transparent" />
 
-        <div className="relative container pb-20 lg:pb-28">
+        <div className="relative container pb-20 lg:pb-28" style={{paddingBottom: '100px'}}>
           <div className="max-w-3xl" style={{marginTop: '100px'}}>
             <p className="rk-section-label mb-5">Queensland's Largest Rendering Operation</p>
             <h1
@@ -236,7 +236,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-white font-bold text-xs uppercase tracking-widest mb-0.5" style={{ letterSpacing: "0.14em" }}>Leading with AI Integration</p>
-                <p className="text-white/45 text-xs" style={{ fontWeight: 300, paddingTop: '10px' }}>Real-time job reporting, automated customer communication, digital safety compliance, and live project tracking — built into every job.</p>
+                <p className="text-white/45 text-xs" style={{ fontWeight: 300, paddingTop: '10px' }}>Real-time job reporting, automated customer communication, digital safety compliance, and live project tracking - built into every job.</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-6 shrink-0">
@@ -249,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* ── HOW WE DELIVER ── */}
-      <section className="py-24 bg-[#0f0f0f]">
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '100px', paddingBottom: '100px'}}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="fade-up">
@@ -262,7 +262,7 @@ export default function Home() {
                 <span className="rk-gold">EVERY JOB.</span>
               </h2>
               <div className="rk-divider mb-8" />
-              <p className="text-white/60 text-sm leading-relaxed mb-8" style={{ fontWeight: 300 }}>
+              <p className="text-white/60 text-sm leading-relaxed mb-8" style={{ fontWeight: 300, color: '#fafafa' }}>
                 We've built our reputation on one thing: doing exactly what we say we'll do, to the standard we say we'll deliver, on the day we say we'll be there. That's not a promise - it's how we've run 10,000 projects.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
