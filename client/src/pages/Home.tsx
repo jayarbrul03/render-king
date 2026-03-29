@@ -163,7 +163,7 @@ export default function Home() {
       <Navigation />
 
       {/* ── HERO ── */}
-      <section className="relative h-screen min-h-[620px] flex items-end overflow-hidden">
+      <section className="relative h-screen min-h-[620px] flex items-end overflow-hidden pt-24 lg:pt-28">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
@@ -172,8 +172,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-[#0a0a0a]/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#0a0a0a]/30 to-transparent" />
 
-        <div className="relative container pb-20 lg:pb-28" style={{paddingBottom: '100px', paddingTop: '200px'}}>
-          <div className="max-w-3xl" style={{marginTop: '100px'}}>
+        <div className="relative container pb-20 lg:pb-28">
+          <div className="max-w-3xl">
             <p className="rk-section-label mb-5">Queensland's Largest Rendering Operation</p>
             <h1
               className="text-white font-black uppercase mb-6"
