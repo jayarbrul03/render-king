@@ -56,7 +56,7 @@ const coreServices = [
   },
   {
     title: "Specialty Finishes",
-    desc: "Premium external finishes including Dulux Acratex premium systems, combined render and paint packages, and external microcement on facades, pools, and outdoor areas.",
+    desc: "Premium external finishes including Dulux Acratex premium systems, combined render and paint packages and external microcement on facades, pools, and outdoor areas.",
     href: "/services/specialty-finishes",
     img: SPECIALTY_IMG,
     badge: "Premium Finish",
