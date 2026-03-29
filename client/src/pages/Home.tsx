@@ -342,7 +342,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/72 to-[#0a0a0a]/15 group-hover:via-[#0a0a0a]/60 transition-all duration-300" />
                 <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "360px" }}>
-                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em" }}>
+                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#c9a84c' }}>
                     {s.badge}
                   </span>
                   <h3
