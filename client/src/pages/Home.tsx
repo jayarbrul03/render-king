@@ -187,11 +187,11 @@ export default function Home() {
               YOUR BUILDS.{" "}
               <span className="rk-gold">FINISHED FASTER.</span>
             </h1>
-            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: 400, color: '#faf9f9' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish — every lot, every time.
             </p>
-            <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300 }}>
-              24 years. 10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast.
+            <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300, color: '#d9d9d9', fontSize: '18px' }}>
+              24 years.  10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/submit-project" className="rk-btn-gold">
@@ -263,7 +263,7 @@ export default function Home() {
               </h2>
               <div className="rk-divider mb-8" />
               <p className="text-white/60 text-sm leading-relaxed mb-8" style={{ fontWeight: 300 }}>
-                We've built our reputation on one thing: doing exactly what we say we'll do, to the standard we say we'll deliver, on the day we say we'll be there. That's not a promise — it's how we've run 10,000 projects.
+                We've built our reputation on one thing: doing exactly what we say we'll do, to the standard we say we'll deliver, on the day we say we'll be there. That's not a promise - it's how we've run 10,000 projects.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {deliveryPoints.map((p, i) => (
@@ -323,7 +323,7 @@ export default function Home() {
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
-              Acrylic render and texture coatings are our core. It's what we've built our reputation on across 10,000 projects. Specialty finishes, Hebel, and EPS installation are offered as a convenience — one subcontractor for your entire wall system.
+              Acrylic render and texture coatings are our core. It's what we've built our reputation on across 10,000 projects. Specialty finishes, Hebel, and EPS installation are offered as a convenience - one subcontractor for your entire wall system.
             </p>
           </div>
 
