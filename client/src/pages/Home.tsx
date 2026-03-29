@@ -378,7 +378,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
                   <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "220px" }}>
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#000000' }}>
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#000000', width: '200px' }}>
                       Wall Systems
                     </span>
                     <h3
@@ -420,7 +420,7 @@ export default function Home() {
             </h2>
             <h2
               className="rk-gold font-black uppercase mb-6"
-              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '1200px' }}
             >
               MORAYFIELD TO 
 GOLD COAST.
@@ -453,7 +453,7 @@ GOLD COAST.
       </section>
 
       {/* ── PORTFOLIO PREVIEW ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '40px'}}>
          <div className="container">
            <div className="mb-12 fade-up">
             <p className="rk-section-label mb-3">Our Work</p>
@@ -498,7 +498,7 @@ GOLD COAST.
         <div className="container">
           <div className="text-center mb-10">
             <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>TRUSTED ON SITE.</p>
-            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>PROVEN IN THE FIELD.</p>
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em", color: '#c9a84c' }}>PROVEN IN THE FIELD.</p>
           </div>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center items-center gap-4 lg:gap-7">
