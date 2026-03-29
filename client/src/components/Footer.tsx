@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="mb-6 flex items-center gap-3">
+            <div className="mb-6 flex items-center gap-3" style={{marginBottom: '1.5rem'}}>
               {/* Crown mark */}
               <svg width="28" height="21" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 26L8 8L16 18L20 4L24 18L32 8L38 26H2Z" fill="#c9a84c" stroke="#c9a84c" strokeWidth="1.5" strokeLinejoin="round"/>
@@ -56,10 +56,10 @@ export default function Footer() {
                 <span className="rk-gold font-black uppercase tracking-widest text-lg" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em" }}>KING</span>
               </div>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-4" style={{ fontWeight: 300 }}>
+            <p className="text-white/50 text-sm leading-relaxed mb-4" style={{ fontWeight: 300, color: '#f3f2f2' }}>
               Queensland's largest rendering operation. 24 years. 10,000+ projects. Volume builders trust us because we show up, communicate, and the finish is right.
             </p>
-            <p className="text-white/30 text-xs uppercase tracking-wider mb-6" style={{ letterSpacing: "0.12em" }}>
+            <p className="text-white/30 text-xs uppercase tracking-wider mb-6" style={{ letterSpacing: "0.12em", color: '#c7c7c7' }}>
               A Render Render Pty Ltd Company
             </p>
             <div className="flex gap-4">
@@ -113,10 +113,10 @@ export default function Footer() {
             </ul>
             <div className="mt-8">
               <h4 className="rk-section-label mb-4">Related Brands</h4>
-              <a href="https://microcement.king" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#c9a84c] text-sm transition-colors block mb-2" style={{ fontWeight: 300 }}>
+              <a href="https://microcement.king" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#c9a84c] text-sm transition-colors block mb-2" style={{ fontWeight: 600, color: '#caa849' }}>
                 Micro Cement King →
               </a>
-              <p className="text-white/25 text-xs" style={{ fontWeight: 300 }}>
+              <p className="text-white/25 text-xs" style={{ fontWeight: 300, color: '#fcfcfc' }}>
                 Premium internal microcement finishes — same ownership, same standard.
               </p>
             </div>
@@ -128,19 +128,19 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="rk-gold mt-0.5 shrink-0" />
-                <a href="tel:0468041477" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>
+                <a href="tel:0468041477" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300, color: '#f7f7f7' }}>
                   0468 041 477
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={14} className="rk-gold mt-0.5 shrink-0" />
-                <a href="mailto:projects@renderking.au" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>
+                <a href="mailto:projects@renderking.au" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300, color: '#f2f2f2' }}>
                   projects@renderking.au
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin size={14} className="rk-gold mt-0.5 shrink-0" />
-                <span className="text-white/60 text-sm" style={{ fontWeight: 300 }}>
+                <span className="text-white/60 text-sm" style={{ fontWeight: 300, color: '#fdfcfc' }}>
                   Greater Brisbane, Morayfield to Ipswich to Gold Coast. Queensland Wide.
                 </span>
               </li>
@@ -157,13 +157,13 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/6">
         <div className="container py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-white/30 text-xs" style={{ fontWeight: 300 }}>
+          <p className="text-white/30 text-xs" style={{ fontWeight: 300, color: '#fcfcfc' }}>
             © {new Date().getFullYear()} Render Render Pty Ltd. All rights reserved. Trading as Render King.
           </p>
           <div className="flex gap-6 flex-wrap justify-center">
-            <span className="text-white/20 text-xs">QBCC Licensed</span>
-            <span className="text-white/20 text-xs">Dulux Acratex Accredited</span>
-            <span className="text-white/20 text-xs">CSR Hebel Approved Installer</span>
+            <span className="text-white/20 text-xs" style={{color: '#f7f7f7'}}>QBCC Licensed</span>
+            <span className="text-white/20 text-xs" style={{color: '#faf9f9'}}>Dulux Acratex Accredited</span>
+            <span className="text-white/20 text-xs" style={{color: '#fafafa'}}>CSR Hebel Approved Installer</span>
           </div>
         </div>
       </div>

@@ -86,7 +86,7 @@ export default function Navigation() {
                     ? "rk-gold"
                     : "text-white/80 hover:text-white"
                 }`}
-                style={{ letterSpacing: "0.12em" }}
+                style={{ letterSpacing: "0.12em", color: '#fafafa' }}
               >
                 Services <ChevronDown size={12} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
@@ -117,7 +117,7 @@ export default function Navigation() {
             <a
               href="tel:0468041477"
               className="text-white/60 hover:text-[#c9a84c] text-xs font-semibold transition-colors"
-              style={{ letterSpacing: "0.08em" }}
+              style={{ letterSpacing: "0.08em", fontWeight: 700, color: '#cbaa4d', fontSize: '18px' }}
             >
               0468 041 477
             </a>
@@ -174,7 +174,7 @@ function NavLink({ href, label, current }: { href: string; label: string; curren
       className={`text-xs font-semibold uppercase tracking-widest transition-colors duration-200 ${
         current ? "rk-gold" : "text-white/80 hover:text-white"
       }`}
-      style={{ letterSpacing: "0.12em" }}
+      style={{ letterSpacing: "0.12em", color: '#fafafa' }}
     >
       {label}
     </Link>

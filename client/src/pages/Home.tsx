@@ -241,7 +241,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-6 shrink-0">
               {["AI Job Reporting", "Safety Compliant", "Digital PSRAs", "Live Communication"].map((tag, i) => (
-                <span key={i} className="text-white/30 text-xs font-bold uppercase tracking-widest" style={{ letterSpacing: "0.12em" }}>{tag}</span>
+                <span key={i} className="text-white/30 text-xs font-bold uppercase tracking-widest" style={{ letterSpacing: "0.12em", color: '#ffffff', fontWeight: 500 }}>{tag}</span>
               ))}
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <p className="text-white/30 text-xs text-center mt-3 uppercase tracking-widest" style={{ letterSpacing: "0.12em", fontSize: "0.65rem" }}>From substrate to completion — one crew, one call</p>
+              <p className="text-white/30 text-xs text-center mt-3 uppercase tracking-widest" style={{ letterSpacing: "0.12em", fontSize: "0.65rem", color: '#fcfcfc' }}>From substrate to completion — one crew, one call</p>
             </div>
           </div>
         </div>
@@ -322,7 +322,7 @@ export default function Home() {
               <span className="rk-gold">EVERYTHING ELSE FOLLOWS.</span>
             </h2>
             <div className="rk-divider mt-4" />
-            <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
               Acrylic render and texture coatings are our core. It's what we've built our reputation on across 10,000 projects. Specialty finishes, Hebel, and EPS installation are offered as a convenience — one subcontractor for your entire wall system.
             </p>
           </div>
@@ -379,7 +379,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
                   <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "220px" }}>
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em" }}>
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9' }}>
                       Wall Systems
                     </span>
                     <h3
@@ -423,7 +423,8 @@ export default function Home() {
               className="rk-gold font-black uppercase mb-6"
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
-              MORAYFIELD TO GOLD COAST.
+              MORAYFIELD TO 
+GOLD COAST.
             </h2>
             <div className="rk-divider mb-8" />
             <p className="text-white/70 text-base leading-relaxed mb-6" style={{ fontWeight: 300 }}>
@@ -502,7 +503,7 @@ export default function Home() {
               <span
                 key={i}
                 className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em" }}
+                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
               >
                 {c}
               </span>
@@ -618,7 +619,7 @@ export default function Home() {
             SUBMIT YOUR PROJECT.{" "}
             <span className="rk-gold">GET A QUOTE FAST.</span>
           </h2>
-          <p className="text-white/50 text-sm mb-10 max-w-lg mx-auto leading-relaxed" style={{ fontWeight: 300 }}>
+          <p className="text-white/50 text-sm mb-10 max-w-lg mx-auto leading-relaxed" style={{ fontWeight: 300, color: '#fafafa' }}>
             Upload your plans, specs, or photos. Our estimating team will review and respond within 1 business day. Volume builders — use our portal for instant project lodgement.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
