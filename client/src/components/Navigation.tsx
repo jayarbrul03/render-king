@@ -39,8 +39,8 @@ export default function Navigation() {
         scrolled ? "nav-scrolled" : "bg-transparent"
       }`}
     >
-      <div className="container">
-        <div className="flex items-center justify-between h-18 py-4" style={{paddingTop: '30px'}}>
+      <div className="container" style={{paddingTop: '30px'}}>
+        <div className="flex items-center justify-between h-18 py-4">
 
           {/* Logo — Full transparent logo mark */}
           <Link href="/" className="flex items-center group">
