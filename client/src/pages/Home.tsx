@@ -498,7 +498,7 @@ GOLD COAST.
       {/* ── CLIENTS ── */}
       <section className="py-16 bg-[#111] border-y border-white/6">
         <div className="container">
-          <p className="rk-section-label text-center mb-10">Trusted by Queensland's Leading Builders</p>
+          <p className="rk-section-label text-center mb-10">TRUSTED ON SITE.<br />PROVEN IN THE FIELD.</p>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center items-center gap-4 lg:gap-7">
               {clients.slice(0, 4).map((c, i) => (
