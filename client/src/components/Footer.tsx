@@ -134,8 +134,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={14} className="rk-gold mt-0.5 shrink-0" />
-                <a href="mailto:projects@renderrender.com.au" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>
-                  projects@renderrender.com.au
+                <a href="mailto:projects@renderking.au" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>
+                  projects@renderking.au
                 </a>
               </li>
               <li className="flex items-start gap-3">
