@@ -40,7 +40,7 @@ export default function Navigation() {
       }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-18 py-4">
+        <div className="flex items-center justify-between h-18 py-4" style={{paddingTop: '30px'}}>
 
           {/* Logo — Clean Premium Wordmark Only */}
           <Link href="/" className="flex items-center group">
@@ -71,7 +71,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8" style={{width: '670px', paddingRight: '20px', marginRight: '20px'}}>
             <NavLink href="/" label="Home" current={location === "/"} />
 
             {/* Services Dropdown */}
@@ -121,7 +121,7 @@ export default function Navigation() {
             >
               0468 041 477
             </a>
-            <Link href="/submit-project" className="rk-btn-gold text-xs" style={{paddingRight: '20px', paddingLeft: '20px'}}>
+            <Link href="/submit-project" className="rk-btn-gold text-xs" style={{paddingRight: '10px', paddingLeft: '12px'}}>
               Submit Project
             </Link>
           </div>

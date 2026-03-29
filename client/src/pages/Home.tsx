@@ -188,8 +188,8 @@ export default function Home() {
               YOUR BUILDS.{" "}
               <span className="rk-gold">FINISHED FASTER.</span>
             </h1>
-            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: 400, color: '#faf9f9' }}>
-              Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish — every lot, every time.
+            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
+              Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
             </p>
             <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300, color: '#d9d9d9', fontSize: '18px' }}>
               24 years.  10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast.
@@ -311,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* ── CORE SERVICES ── */}
-      <section className="py-24 bg-[#111]">
+      <section className="py-24 bg-[#111]" style={{paddingTop: '50px'}}>
         <div className="container">
           <div className="mb-16 fade-up">
             <p className="rk-section-label mb-3">What We Do</p>
@@ -411,7 +411,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/96 via-[#0a0a0a]/80 to-transparent" />
 
-        <div className="relative container py-24 lg:py-32">
+        <div className="relative container py-24 lg:py-32" style={{paddingTop: '100px', paddingBottom: '102px'}}>
           <div className="max-w-2xl fade-up">
             <p className="rk-section-label mb-4">Scale & Coverage</p>
             <h2
