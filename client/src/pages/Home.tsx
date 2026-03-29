@@ -250,7 +250,7 @@ export default function Home() {
       </section>
 
       {/* ── HOW WE DELIVER ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '100px', paddingBottom: '100px'}}>
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="fade-up">
@@ -311,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* ── CORE SERVICES ── */}
-      <section className="py-24 bg-[#111]" style={{paddingTop: '50px'}}>
+      <section className="py-24 bg-[#111]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="mb-16 fade-up">
             <p className="rk-section-label mb-3">What We Do</p>
@@ -411,7 +411,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/96 via-[#0a0a0a]/80 to-transparent" />
 
-        <div className="relative container py-24 lg:py-32" style={{paddingTop: '100px', paddingBottom: '102px'}}>
+        <div className="relative container py-24 lg:py-32" style={{paddingTop: '80px', paddingBottom: '80px'}}>
           <div className="max-w-2xl fade-up">
             <p className="rk-section-label mb-4">Scale & Coverage</p>
             <h2
@@ -455,7 +455,7 @@ GOLD COAST.
       </section>
 
       {/* ── PORTFOLIO PREVIEW ── */}
-      <section className="py-24 bg-[#0f0f0f]">
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="mb-12 fade-up">
             <p className="rk-section-label mb-3">Our Work</p>
@@ -514,7 +514,7 @@ GOLD COAST.
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 bg-[#0f0f0f]">
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="mb-16 fade-up">
             <p className="rk-section-label mb-3">What Builders Say</p>
@@ -549,7 +549,7 @@ GOLD COAST.
       </section>
 
       {/* ── TRUST SIGNALS ── */}
-      <section className="py-20 bg-[#111]">
+      <section className="py-20 bg-[#111]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
@@ -610,7 +610,7 @@ GOLD COAST.
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-24 bg-[#0f0f0f]">
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container text-center fade-up">
           <p className="rk-section-label mb-4">Ready to Get Started?</p>
           <h2
