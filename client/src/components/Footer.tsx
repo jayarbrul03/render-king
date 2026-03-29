@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="container py-16">
+      <div className="container py-16" style={{paddingTop: '60px'}}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">

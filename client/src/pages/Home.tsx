@@ -250,10 +250,9 @@ export default function Home() {
       </section>
 
       {/* ── HOW WE DELIVER ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="fade-up">
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+         <div className="container">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">           <div className="fade-up">
               <p className="rk-section-label mb-3">How We Deliver</p>
               <h2
                 className="text-white font-black uppercase mb-6"
@@ -311,11 +310,10 @@ export default function Home() {
       </section>
 
       {/* ── CORE SERVICES ── */}
-      <section className="py-24 bg-[#111]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
-        <div className="container">
-          <div className="mb-16 fade-up">
-            <p className="rk-section-label mb-3">What We Do</p>
-            <h2
+      <section className="py-24 bg-[#111]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+         <div className="container">
+           <div className="mb-16 fade-up">
+             <p className="rk-section-label mb-3">What We Do</p>          <h2
               className="text-white font-black uppercase"
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
@@ -455,9 +453,9 @@ GOLD COAST.
       </section>
 
       {/* ── PORTFOLIO PREVIEW ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
-        <div className="container">
-          <div className="mb-12 fade-up">
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+         <div className="container">
+           <div className="mb-12 fade-up">
             <p className="rk-section-label mb-3">Our Work</p>
             <h2
               className="text-white font-black uppercase"
@@ -496,7 +494,7 @@ GOLD COAST.
       </section>
 
       {/* ── CLIENTS ── */}
-      <section className="py-16 bg-[#111] border-y border-white/6">
+      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '40px'}}>
         <div className="container">
           <div className="text-center mb-10">
             <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>TRUSTED ON SITE.</p>
@@ -530,11 +528,10 @@ GOLD COAST.
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
-        <div className="container">
-          <div className="mb-16 fade-up">
-            <p className="rk-section-label mb-3">What Builders Say</p>
-            <h2
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+         <div className="container">
+           <div className="mb-16 fade-up">
+             <p className="rk-section-label mb-3">What Builders Say</p>          <h2
               className="text-white font-black uppercase"
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
