@@ -173,7 +173,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-[#0a0a0a]/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-[#0a0a0a]/30 to-transparent" />
 
-        <div className="relative container mt-auto pb-20 lg:pb-28" style={{paddingTop: '150px'}}>
+        <div className="relative container mt-auto pb-20 lg:pb-28" style={{paddingTop: '200px', marginTop: '130px'}}>
           <div className="max-w-3xl">
             <p className="rk-section-label mb-5">Queensland's Largest Rendering Operation</p>
             <h1
