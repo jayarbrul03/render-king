@@ -42,37 +42,13 @@ export default function Navigation() {
       <div className="container">
         <div className="flex items-center justify-between h-18 py-4" style={{paddingTop: '30px'}}>
 
-          {/* Logo — Crown icon + Wordmark */}
+          {/* Logo — Full transparent logo mark */}
           <Link href="/" className="flex items-center group">
-            <div className="flex flex-col items-center leading-none">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-logo_f8ac98e7.webp"
-                alt="Render King Logo"
-                style={{ width: '40px', height: '40px', objectFit: 'contain', marginBottom: '2px' }}
-              />
-              <span
-                className="text-white font-black uppercase"
-                style={{
-                  fontFamily: "Montserrat, sans-serif",
-                  letterSpacing: "0.28em",
-                  fontSize: "1.05rem",
-                  lineHeight: 1,
-                }}
-              >
-                RENDER
-              </span>
-              <span
-                className="rk-gold font-black uppercase"
-                style={{
-                  fontFamily: "Montserrat, sans-serif",
-                  letterSpacing: "0.28em",
-                  fontSize: "1.05rem",
-                  lineHeight: 1.1,
-                }}
-              >
-                KING
-              </span>
-            </div>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-logo-trans_cee38430.webp"
+              alt="Render King"
+              style={{ width: '120px', height: '120px', objectFit: 'contain' }}
+            />
           </Link>
 
           {/* Desktop Nav */}
