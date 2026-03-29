@@ -499,7 +499,7 @@ GOLD COAST.
       <section className="py-16 bg-[#111] border-y border-white/6">
         <div className="container">
           <p className="rk-section-label text-center mb-10">Trusted by Queensland's Leading Builders</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14">
+          <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-7">
             {clients.map((c, i) => (
               <span
                 key={i}
