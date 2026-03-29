@@ -378,7 +378,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
                   <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "220px" }}>
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#000000', width: '200px' }}>
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#404040', width: '200px' }}>
                       Wall Systems
                     </span>
                     <h3
