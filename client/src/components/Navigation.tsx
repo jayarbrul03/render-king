@@ -40,7 +40,7 @@ export default function Navigation() {
       }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-18 py-4">
+        <div className="flex items-center justify-between h-18 py-4" style={{paddingBottom: '80px'}}>
 
           {/* Logo — Clean Premium Wordmark Only */}
           <Link href="/" className="flex items-center group">
@@ -117,11 +117,11 @@ export default function Navigation() {
             <a
               href="tel:0468041477"
               className="text-white/60 hover:text-[#c9a84c] text-xs font-semibold transition-colors"
-              style={{ letterSpacing: "0.08em", fontWeight: 700, color: '#cbaa4d', fontSize: '18px' }}
+              style={{ letterSpacing: "0.08em", fontWeight: 700, color: '#cbaa4d', fontSize: '15px' }}
             >
               0468 041 477
             </a>
-            <Link href="/submit-project" className="rk-btn-gold text-xs">
+            <Link href="/submit-project" className="rk-btn-gold text-xs" style={{paddingRight: '20px', paddingLeft: '20px'}}>
               Submit Project
             </Link>
           </div>
