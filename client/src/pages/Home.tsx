@@ -498,7 +498,10 @@ GOLD COAST.
       {/* ── CLIENTS ── */}
       <section className="py-16 bg-[#111] border-y border-white/6">
         <div className="container">
-          <p className="rk-section-label text-center mb-10">TRUSTED ON SITE.<br />PROVEN IN THE FIELD.</p>
+          <div className="text-center mb-10">
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>TRUSTED ON SITE.</p>
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>PROVEN IN THE FIELD.</p>
+          </div>
           <div className="flex flex-col items-center gap-4">
             <div className="flex justify-center items-center gap-4 lg:gap-7">
               {clients.slice(0, 4).map((c, i) => (
