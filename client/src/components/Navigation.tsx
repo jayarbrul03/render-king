@@ -40,7 +40,7 @@ export default function Navigation() {
       }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-18 py-4" style={{paddingBottom: '80px'}}>
+        <div className="flex items-center justify-between h-18 py-4" style={{paddingBottom: '60px'}}>
 
           {/* Logo — Clean Premium Wordmark Only */}
           <Link href="/" className="flex items-center group">
