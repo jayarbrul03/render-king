@@ -202,28 +202,24 @@ export default function Home() {
                 Call Us Now
               </a>
             </div>
+
+            {/* ── AUTHORITY STATS BAR ── */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/20 mt-12 pt-10 border-t border-white/10">
+              {stats.map((s, i) => (
+                <div key={i} className="text-center lg:px-6 fade-up" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <span className="rk-gold font-black text-3xl lg:text-4xl rk-heading">{s.number}</span>
+                  <p className="text-white/50 text-xs uppercase tracking-widest mt-1" style={{ letterSpacing: "0.15em", fontWeight: 600 }}>
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="absolute bottom-8 right-8 hidden lg:flex flex-col items-center gap-2">
           <div className="w-px h-16 bg-gradient-to-b from-transparent to-[#c9a84c]" />
           <span className="rk-section-label" style={{ writingMode: "vertical-rl", fontSize: "0.6rem" }}>Scroll</span>
-        </div>
-      </section>
-
-      {/* ── AUTHORITY STATS BAR ── */}
-      <section className="bg-[#111] border-y border-white/8">
-        <div className="container py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-white/10">
-            {stats.map((s, i) => (
-              <div key={i} className="text-center lg:px-8 fade-up" style={{ transitionDelay: `${i * 80}ms` }}>
-                <span className="rk-gold font-black text-4xl lg:text-5xl rk-heading">{s.number}</span>
-                <p className="text-white/50 text-xs uppercase tracking-widest mt-2" style={{ letterSpacing: "0.15em", fontWeight: 600 }}>
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
