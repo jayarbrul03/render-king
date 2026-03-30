@@ -341,7 +341,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/72 to-[#0a0a0a]/15 group-hover:via-[#0a0a0a]/60 transition-all duration-300" />
                 <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "360px" }}>
-                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#d0a84c', color: '#ffffff' }}>
+                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#d0a84c', color: '#000000' }}>
                     {s.badge}
                   </span>
                   <h3
@@ -378,7 +378,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
                   <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "220px" }}>
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#d0a84c', width: '200px' }}>
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#000000', backgroundColor: '#d0a84c', width: '200px' }}>
                       Wall Systems
                     </span>
                     <h3

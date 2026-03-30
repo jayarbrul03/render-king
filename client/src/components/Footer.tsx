@@ -112,9 +112,8 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-8">
-              <h4 className="rk-section-label mb-4">Related Brands</h4>
               <a href="https://microcement.king" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#c9a84c] text-sm transition-colors block mb-2" style={{ fontWeight: 600, color: '#caa849' }}>
-                Micro Cement King →
+                MICRO CEMENT KING →
               </a>
               <p className="text-white/25 text-xs" style={{ fontWeight: 300, color: '#fcfcfc' }}>
                 Premium internal microcement finishes — same ownership, same standard.
