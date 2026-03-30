@@ -64,7 +64,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/renderking" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#c9a84c] transition-colors">
-                <Instagram size={40} />
+                <Instagram size={40} style={{backgroundColor: '#030303'}} />
               </a>
               <a href="https://facebook.com/renderking" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#c9a84c] transition-colors">
                 <Facebook size={40} />

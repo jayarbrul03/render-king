@@ -459,7 +459,7 @@ GOLD COAST.
             <p className="rk-section-label mb-3">Our Work</p>
             <h2
               className="text-white font-black uppercase"
-              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '1100px' }}
             >
               VOLUME ESTATES.{" "}
               <span className="rk-gold" style={{display: 'inline'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
