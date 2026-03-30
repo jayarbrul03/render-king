@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#080808] border-t border-white/8">
       {/* Supplier strip */}
-      <div className="border-b border-white/6">
+      <div className="border-b border-white/6" style={{paddingTop: '50px', height: '200px'}}>
         <div className="container py-6">
           <p className="rk-section-label text-center mb-4">Approved Applicators & Suppliers</p>
           <div className="flex flex-wrap justify-center gap-3">

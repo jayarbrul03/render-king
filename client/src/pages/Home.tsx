@@ -186,7 +186,7 @@ export default function Home() {
               }}
             >
               YOUR BUILDS.{" "}
-              <span className="rk-gold" style={{display: 'block'}}>FINISHED FASTER.</span>
+              <span className="rk-gold" style={{display: 'block', width: '900px'}}>FINISHED FASTER.</span>
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
@@ -318,7 +318,7 @@ export default function Home() {
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '600px' }}
             >
               RENDER FIRST.{" "}
-              <span className="rk-gold" style={{display: 'block'}}>EVERYTHING ELSE FOLLOWS.</span>
+              <span className="rk-gold" style={{display: 'block', width: '800px'}}>EVERYTHING ELSE FOLLOWS.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
@@ -462,7 +462,7 @@ GOLD COAST.
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               VOLUME ESTATES.{" "}
-              <span className="rk-gold" style={{display: 'block'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
+              <span className="rk-gold" style={{display: 'inline'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-4 max-w-xl" style={{ fontWeight: 300 }}>
@@ -536,7 +536,7 @@ GOLD COAST.
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               TRUSTED ON SITE.{" "}
-              <span className="rk-gold">PROVEN IN THE FIELD.</span>
+              <span className="rk-gold" style={{display: 'block'}}>PROVEN IN THE FIELD.</span>
             </h2>
             <div className="rk-divider mt-4" />
           </div>
