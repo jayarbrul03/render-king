@@ -494,7 +494,7 @@ GOLD COAST.
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '0px'}}>
          <div className="container">
            <div className="mb-16 fade-up">
              <p className="rk-section-label mb-3">What Builders Say</p>          <h2

@@ -10,8 +10,8 @@ import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 function SupplierBadge({ name }: { name: string }) {
   return (
     <span
-      className="inline-block border border-white/15 text-white/40 text-xs font-bold uppercase tracking-widest px-3 py-1.5 hover:border-[#c9a84c]/40 hover:text-white/60 transition-all"
-      style={{ letterSpacing: "0.12em" }}
+      className="inline-block border border-white/15 text-xs font-bold uppercase tracking-widest px-3 py-1.5 hover:border-[#c9a84c]/40 transition-all"
+      style={{ letterSpacing: "0.12em", color: '#000000', backgroundColor: '#c7c7c7' }}
     >
       {name}
     </span>
@@ -22,9 +22,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#080808] border-t border-white/8">
       {/* Supplier strip */}
-      <div className="border-b border-white/6" style={{paddingTop: '50px', height: '200px'}}>
-        <div className="container py-6">
-          <p className="rk-section-label text-center mb-4">Approved Applicators & Suppliers</p>
+      <div className="border-b border-white/6" style={{ paddingTop: '30px', height: '200px' }}>
+        <div className="container py-6" style={{ paddingTop: '0px' }}>
+          <p className="rk-section-label text-center mb-4" style={{ fontSize: '14px' }}>Approved Applicators & Suppliers</p>
           <div className="flex flex-wrap justify-center gap-3">
             <SupplierBadge name="Dulux Acratex" />
             <SupplierBadge name="CSR Hebel" />
