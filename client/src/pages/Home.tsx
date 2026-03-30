@@ -313,12 +313,12 @@ export default function Home() {
       <section className="py-24 bg-[#111]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
          <div className="container">
            <div className="mb-16 fade-up" style={{width: '1000px'}}>
-             <p className="rk-section-label mb-3" style={{width: '600px'}}>What We Do</p>          <h2
+             <p className="rk-section-label mb-3" style={{width: '1100px'}}>What We Do</p>          <h2
               className="text-white font-black uppercase"
-              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '600px' }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '1100px' }}
             >
               RENDER FIRST.{" "}
-              <span className="rk-gold" style={{display: 'block', width: '800px'}}>EVERYTHING ELSE FOLLOWS.</span>
+              <span className="rk-gold" style={{display: 'block', width: '1100px'}}>EVERYTHING ELSE FOLLOWS.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
