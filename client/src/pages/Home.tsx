@@ -186,7 +186,7 @@ export default function Home() {
               }}
             >
               YOUR BUILDS.{" "}
-              <span className="rk-gold" style={{display: 'block', width: '900px'}}>FINISHED FASTER.</span>
+              <span className="rk-gold" style={{display: 'block', width: '1000px'}}>FINISHED FASTER.</span>
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
@@ -341,7 +341,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/72 to-[#0a0a0a]/15 group-hover:via-[#0a0a0a]/60 transition-all duration-300" />
                 <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "360px" }}>
-                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#ffffff', color: '#0f0f0f' }}>
+                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#d0a84c', color: '#ffffff' }}>
                     {s.badge}
                   </span>
                   <h3
@@ -378,7 +378,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
                   <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "220px" }}>
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#404040', width: '200px' }}>
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#d0a84c', width: '200px' }}>
                       Wall Systems
                     </span>
                     <h3
@@ -528,7 +528,7 @@ GOLD COAST.
       </section>
 
       {/* ── CLIENTS ── */}
-      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '40px'}}>
+      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '80px'}}>
         <div className="container">
 
           <div className="flex flex-col items-center gap-4">
