@@ -115,7 +115,7 @@ const testimonials = [
     stars: 5,
   },
   {
-    quote: "When you're running a retirement village, you need a subcontractor you can set and forget. Render King shows up, does the job, and doesn't create problems.",
+    quote: "When you run a retirement village, you need a subcontractor you can set and forget. Render King shows up, does the job, and doesn't create problems.",
     author: "Project Director",
     company: "Gem Life",
     stars: 5,
