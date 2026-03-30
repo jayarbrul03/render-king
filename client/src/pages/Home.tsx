@@ -103,8 +103,8 @@ const deliveryPoints = [
 ];
 
 const clients = [
-  "∎ AUSBUILD", "∎ GEM LIFE", "∎ METRICON", "∎ STYLEMASTER",
-  "∎ PARADE HOMES", "∎ MCCARTHY HOMES", "∎ TAYLORD CONSTRUCTION",
+  "■  AUSBUILD", "■  GEM LIFE", "■  METRICON", "■  STYLEMASTER",
+  "■  PARADE HOMES", "■  MCCARTHY HOMES", "■  TAYLORD CONSTRUCTION",
 ];
 
 const testimonials = [
@@ -180,13 +180,13 @@ export default function Home() {
               className="text-white font-black uppercase mb-6"
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: '70px',
+                fontSize: "clamp(2.6rem, 6.5vw, 5.2rem)",
                 letterSpacing: "0.02em",
                 lineHeight: 0.93,
               }}
             >
               YOUR BUILDS.{" "}
-              <span className="rk-gold" style={{display: 'block', width: '1000px', fontSize: '70px'}}>FINISHED FASTER.</span>
+              <span className="rk-gold">FINISHED FASTER.</span>
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
@@ -256,10 +256,10 @@ export default function Home() {
               <p className="rk-section-label mb-3">How We Deliver</p>
               <h2
                 className="text-white font-black uppercase mb-6"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em", width: '1000px' }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em" }}
               >
                 ABOVE EXPECTATIONS.{" "}
-                <span className="rk-gold" style={{display: 'block'}}>EVERY JOB.</span>
+                <span className="rk-gold">EVERY JOB.</span>
               </h2>
               <div className="rk-divider mb-8" />
               <p className="text-white/60 text-sm leading-relaxed mb-8" style={{ fontWeight: 300, color: '#fafafa' }}>
@@ -312,13 +312,13 @@ export default function Home() {
       {/* ── CORE SERVICES ── */}
       <section className="py-24 bg-[#111]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
          <div className="container">
-           <div className="mb-16 fade-up" style={{width: '1000px'}}>
-             <p className="rk-section-label mb-3" style={{width: '1100px'}}>What We Do</p>          <h2
+           <div className="mb-16 fade-up">
+             <p className="rk-section-label mb-3">What We Do</p>          <h2
               className="text-white font-black uppercase"
-              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '1100px' }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               RENDER FIRST.{" "}
-              <span className="rk-gold" style={{display: 'block', width: '1100px'}}>EVERYTHING ELSE FOLLOWS.</span>
+              <span className="rk-gold">EVERYTHING ELSE FOLLOWS.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
@@ -341,7 +341,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/72 to-[#0a0a0a]/15 group-hover:via-[#0a0a0a]/60 transition-all duration-300" />
                 <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "360px" }}>
-                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#d0a84c', color: '#000000' }}>
+                  <span className={`inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 ${s.badge === "Core Service" ? "bg-[#c9a84c] text-[#0f0f0f]" : "bg-white/15 text-white/80"}`} style={{ letterSpacing: "0.12em", backgroundColor: '#c9a84c', color: '#0f0f0f' }}>
                     {s.badge}
                   </span>
                   <h3
@@ -378,7 +378,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/20" />
                   <div className="relative p-8 h-full flex flex-col justify-end" style={{ minHeight: "220px" }}>
-                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#000000', backgroundColor: '#d0a84c', width: '200px' }}>
+                    <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3 px-2 py-1 bg-white/10 text-white/60" style={{ letterSpacing: "0.12em", color: '#faf9f9', backgroundColor: '#404040', width: '200px' }}>
                       Wall Systems
                     </span>
                     <h3
@@ -459,10 +459,10 @@ GOLD COAST.
             <p className="rk-section-label mb-3">Our Work</p>
             <h2
               className="text-white font-black uppercase"
-              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '1100px' }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               VOLUME ESTATES.{" "}
-              <span className="rk-gold" style={{display: 'block'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
+              <span className="rk-gold">CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-4 max-w-xl" style={{ fontWeight: 300 }}>
@@ -493,8 +493,42 @@ GOLD COAST.
         </div>
       </section>
 
+      {/* ── CLIENTS ── */}
+      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '40px'}}>
+        <div className="container">
+          <div className="text-center mb-10">
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>TRUSTED ON SITE.</p>
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em", color: '#c9a84c' }}>PROVEN IN THE FIELD.</p>
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex justify-center items-center gap-4 lg:gap-7">
+              {clients.slice(0, 4).map((c, i) => (
+                <span
+                  key={i}
+                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
+                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+            <div className="flex justify-center items-center gap-4 lg:gap-7">
+              {clients.slice(4).map((c, i) => (
+                <span
+                  key={i}
+                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
+                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '0px'}}>
+      <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
          <div className="container">
            <div className="mb-16 fade-up">
              <p className="rk-section-label mb-3">What Builders Say</p>          <h2
@@ -502,7 +536,7 @@ GOLD COAST.
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               TRUSTED ON SITE.{" "}
-              <span className="rk-gold" style={{display: 'block'}}>PROVEN IN THE FIELD.</span>
+              <span className="rk-gold">PROVEN IN THE FIELD.</span>
             </h2>
             <div className="rk-divider mt-4" />
           </div>
@@ -527,39 +561,8 @@ GOLD COAST.
         </div>
       </section>
 
-      {/* ── CLIENTS ── */}
-      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '80px'}}>
-        <div className="container">
-
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex justify-center items-center gap-4 lg:gap-7">
-              {clients.slice(0, 4).map((c, i) => (
-                <span
-                  key={i}
-                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf', fontWeight: '700' }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-            <div className="flex justify-center items-center gap-4 lg:gap-7">
-              {clients.slice(4).map((c, i) => (
-                <span
-                  key={i}
-                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf', fontWeight: '700' }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── TRUST SIGNALS ── */}
-      <section className="py-20 bg-[#111]" style={{paddingTop: '0px', paddingBottom: '80px'}}>
+      <section className="py-20 bg-[#111]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
@@ -628,7 +631,7 @@ GOLD COAST.
             style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}
           >
             SUBMIT YOUR PROJECT.{" "}
-            <span className="rk-gold" style={{display: 'block'}}>GET A QUOTE FAST.</span>
+            <span className="rk-gold">GET A QUOTE FAST.</span>
           </h2>
           <p className="text-white/50 text-sm mb-10 max-w-lg mx-auto leading-relaxed" style={{ fontWeight: 300, color: '#fafafa' }}>
             Upload your plans, specs, or photos. Our estimating team will review and respond within 1 business day. Volume builders — use our portal for instant project lodgement.
