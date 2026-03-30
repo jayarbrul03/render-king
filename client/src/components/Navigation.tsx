@@ -67,7 +67,7 @@ export default function Navigation() {
                     ? "rk-gold"
                     : "text-white/80 hover:text-white"
                 }`}
-                style={{ letterSpacing: "0.12em", color: '#fafafa' }}
+                style={{ letterSpacing: "0.12em", color: '#fafafa', fontSize: '15px' }}
               >
                 Services <ChevronDown size={12} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
@@ -155,7 +155,7 @@ function NavLink({ href, label, current }: { href: string; label: string; curren
       className={`text-xs font-semibold uppercase tracking-widest transition-colors duration-200 ${
         current ? "rk-gold" : "text-white/80 hover:text-white"
       }`}
-      style={{ letterSpacing: "0.12em", color: '#fafafa' }}
+      style={{ letterSpacing: "0.12em", color: '#fafafa', fontSize: '15px' }}
     >
       {label}
     </Link>
