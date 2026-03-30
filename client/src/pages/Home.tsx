@@ -180,13 +180,13 @@ export default function Home() {
               className="text-white font-black uppercase mb-6"
               style={{
                 fontFamily: "Montserrat, sans-serif",
-                fontSize: "clamp(2.6rem, 6.5vw, 5.2rem)",
+                fontSize: '70px',
                 letterSpacing: "0.02em",
                 lineHeight: 0.93,
               }}
             >
               YOUR BUILDS.{" "}
-              <span className="rk-gold" style={{display: 'block', width: '1000px'}}>FINISHED FASTER.</span>
+              <span className="rk-gold" style={{display: 'block', width: '1000px', fontSize: '70px'}}>FINISHED FASTER.</span>
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
