@@ -188,10 +188,10 @@ export default function Home() {
               YOUR BUILDS.{" "}
               <span className="rk-gold">FINISHED FASTER.</span>
             </h1>
-            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
+            <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '19px' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
             </p>
-            <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300, color: '#d9d9d9', fontSize: '18px' }}>
+            <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300, color: '#d9d9d9', fontSize: '19px' }}>
               24 years.  10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -426,10 +426,10 @@ export default function Home() {
 GOLD COAST.
             </h2>
             <div className="rk-divider mb-8" />
-            <p className="text-white/70 text-base leading-relaxed mb-6" style={{ fontWeight: 300 }}>
+            <p className="text-white/70 text-base leading-relaxed mb-6" style={{ fontWeight: '400', color: '#fafafa' }}>
               Our primary focus is Greater Brisbane and the volume corridors — Morayfield, North Lakes, Ipswich, Springfield, Logan, and down to the Gold Coast. We run multiple crews simultaneously and are actively placing new managers to expand our Queensland coverage.
             </p>
-            <p className="text-white/50 text-sm leading-relaxed mb-8" style={{ fontWeight: 300 }}>
+            <p className="text-white/50 text-sm leading-relaxed mb-8" style={{ fontWeight: 300, color: '#fafafa', fontSize: '16px' }}>
               Matty Mannion started in the trade and built one of Queensland's largest rendering operations from the ground up. Two render jobs a week personally for 20 years — over 2,000 jobs. With crews running 4–5 jobs a week for the past 8 years, we've crossed 10,000 projects combined.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-10">
