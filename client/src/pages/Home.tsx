@@ -103,8 +103,8 @@ const deliveryPoints = [
 ];
 
 const clients = [
-  "AUSBUILD", "GEM LIFE", "METRICON", "STYLEMASTER",
-  "PARADE HOMES", "MCCARTHY HOMES", "TAYLORD CONSTRUCTION",
+  "∎ AUSBUILD", "∎ GEM LIFE", "∎ METRICON", "∎ STYLEMASTER",
+  "∎ PARADE HOMES", "∎ MCCARTHY HOMES", "∎ TAYLORD CONSTRUCTION",
 ];
 
 const testimonials = [
@@ -506,7 +506,7 @@ GOLD COAST.
                 <span
                   key={i}
                   className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
+                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf', fontWeight: '700' }}
                 >
                   {c}
                 </span>
@@ -517,7 +517,7 @@ GOLD COAST.
                 <span
                   key={i}
                   className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
+                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf', fontWeight: '700' }}
                 >
                   {c}
                 </span>
