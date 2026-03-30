@@ -186,7 +186,7 @@ export default function Home() {
               }}
             >
               YOUR BUILDS.{" "}
-              <span className="rk-gold">FINISHED FASTER.</span>
+              <span className="rk-gold" style={{display: 'block'}}>FINISHED FASTER.</span>
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-4 max-w-xl leading-relaxed" style={{ fontWeight: '500', color: '#faf9f9', fontSize: '20px' }}>
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
@@ -256,7 +256,7 @@ export default function Home() {
               <p className="rk-section-label mb-3">How We Deliver</p>
               <h2
                 className="text-white font-black uppercase mb-6"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em" }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em", width: '600px' }}
               >
                 ABOVE EXPECTATIONS.{" "}
                 <span className="rk-gold">EVERY JOB.</span>
@@ -313,12 +313,12 @@ export default function Home() {
       <section className="py-24 bg-[#111]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
          <div className="container">
            <div className="mb-16 fade-up">
-             <p className="rk-section-label mb-3">What We Do</p>          <h2
+             <p className="rk-section-label mb-3" style={{width: '600px'}}>What We Do</p>          <h2
               className="text-white font-black uppercase"
-              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
+              style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '600px' }}
             >
               RENDER FIRST.{" "}
-              <span className="rk-gold">EVERYTHING ELSE FOLLOWS.</span>
+              <span className="rk-gold" style={{display: 'block'}}>EVERYTHING ELSE FOLLOWS.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
@@ -462,7 +462,7 @@ GOLD COAST.
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               VOLUME ESTATES.{" "}
-              <span className="rk-gold">CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
+              <span className="rk-gold" style={{display: 'block'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-4 max-w-xl" style={{ fontWeight: 300 }}>
@@ -631,7 +631,7 @@ GOLD COAST.
             style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}
           >
             SUBMIT YOUR PROJECT.{" "}
-            <span className="rk-gold">GET A QUOTE FAST.</span>
+            <span className="rk-gold" style={{display: 'block'}}>GET A QUOTE FAST.</span>
           </h2>
           <p className="text-white/50 text-sm mb-10 max-w-lg mx-auto leading-relaxed" style={{ fontWeight: 300, color: '#fafafa' }}>
             Upload your plans, specs, or photos. Our estimating team will review and respond within 1 business day. Volume builders — use our portal for instant project lodgement.
