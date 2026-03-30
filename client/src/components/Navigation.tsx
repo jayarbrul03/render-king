@@ -37,7 +37,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "nav-scrolled" : "bg-transparent"
-      }`}
+      }`} style={{height: '150px'}}
     >
       <div className="container" style={{paddingTop: '30px'}}>
         <div className="flex items-center justify-between h-18 py-4">
