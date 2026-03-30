@@ -158,12 +158,12 @@ export default function Footer() {
       <div className="border-t border-white/6">
         <div className="container py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-white/30 text-xs" style={{ fontWeight: 300, color: '#fcfcfc' }}>
-            © {new Date().getFullYear()} Render Render Pty Ltd. All rights reserved. Trading as Render King.
+            Render Render Pty Ltd. All rights reserved. Trading as Render King © {new Date().getFullYear()}
           </p>
           <div className="flex gap-6 flex-wrap justify-center">
-            <span className="text-white/20 text-xs" style={{color: '#f7f7f7'}}>QBCC Licensed</span>
-            <span className="text-white/20 text-xs" style={{color: '#faf9f9'}}>Dulux Acratex Accredited</span>
-            <span className="text-white/20 text-xs" style={{color: '#fafafa'}}>CSR Hebel Approved Installer</span>
+            <span className="text-white/20 text-xs" style={{color: '#000000', backgroundColor: '#ffffff'}}>QBCC Licensed</span>
+            <span className="text-white/20 text-xs" style={{color: '#000000', backgroundColor: '#ffffff'}}>Dulux Acratex Accredited</span>
+            <span className="text-white/20 text-xs" style={{color: '#000000', backgroundColor: '#ffffff'}}>CSR Hebel Approved Installer</span>
           </div>
         </div>
       </div>
