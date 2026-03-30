@@ -59,7 +59,7 @@ export default function Footer() {
             <p className="text-white/50 text-sm leading-relaxed mb-4" style={{ fontWeight: 300, color: '#ffffff', fontSize: '13px' }}>
               Queensland's largest rendering operation. 24 years. 10,000+ projects. Volume builders trust us because we show up, communicate, and the finish is right.
             </p>
-            <p className="text-white/30 text-xs uppercase tracking-wider mb-6" style={{ letterSpacing: "0.12em", color: '#fdfcfc' }}>
+            <p className="text-white/30 text-xs uppercase tracking-wider mb-6" style={{ letterSpacing: "0.12em", color: '#fdfcfc', fontSize: '10px' }}>
               A Render Render Pty Ltd Company
             </p>
             <div className="flex gap-4">

@@ -259,7 +259,7 @@ export default function Home() {
                 style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em", width: '600px' }}
               >
                 ABOVE EXPECTATIONS.{" "}
-                <span className="rk-gold">EVERY JOB.</span>
+                <span className="rk-gold" style={{display: 'block'}}>EVERY JOB.</span>
               </h2>
               <div className="rk-divider mb-8" />
               <p className="text-white/60 text-sm leading-relaxed mb-8" style={{ fontWeight: 300, color: '#fafafa' }}>
@@ -462,7 +462,7 @@ GOLD COAST.
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '1100px' }}
             >
               VOLUME ESTATES.{" "}
-              <span className="rk-gold" style={{display: 'inline'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
+              <span className="rk-gold" style={{display: 'block'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-4 max-w-xl" style={{ fontWeight: 300 }}>
@@ -559,7 +559,7 @@ GOLD COAST.
       </section>
 
       {/* ── TRUST SIGNALS ── */}
-      <section className="py-20 bg-[#111]" style={{paddingTop: '80px', paddingBottom: '80px'}}>
+      <section className="py-20 bg-[#111]" style={{paddingTop: '0px', paddingBottom: '80px'}}>
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
