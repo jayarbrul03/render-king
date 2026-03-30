@@ -256,7 +256,7 @@ export default function Home() {
               <p className="rk-section-label mb-3">How We Deliver</p>
               <h2
                 className="text-white font-black uppercase mb-6"
-                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em", width: '600px' }}
+                style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", letterSpacing: "0.03em", width: '1000px' }}
               >
                 ABOVE EXPECTATIONS.{" "}
                 <span className="rk-gold" style={{display: 'block'}}>EVERY JOB.</span>
@@ -312,7 +312,7 @@ export default function Home() {
       {/* ── CORE SERVICES ── */}
       <section className="py-24 bg-[#111]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
          <div className="container">
-           <div className="mb-16 fade-up">
+           <div className="mb-16 fade-up" style={{width: '1000px'}}>
              <p className="rk-section-label mb-3" style={{width: '600px'}}>What We Do</p>          <h2
               className="text-white font-black uppercase"
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em", width: '600px' }}
