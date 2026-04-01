@@ -303,7 +303,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <p className="text-white/30 text-xs text-center mt-3 uppercase tracking-widest" style={{ letterSpacing: "0.12em", fontSize: '12px', color: '#fcfcfc' }}>From substrate to completion — one crew, one call</p>
+              <p className="text-white/30 text-xs text-center mt-3 uppercase tracking-widest" style={{ letterSpacing: "0.12em", fontSize: "0.65rem", color: '#fcfcfc' }}>From substrate to completion — one crew, one call</p>
             </div>
           </div>
         </div>
@@ -318,7 +318,7 @@ export default function Home() {
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               RENDER FIRST.{" "}
-              <span className="rk-gold" style={{display: 'block'}}>EVERYTHING ELSE FOLLOWS.</span>
+              <span className="rk-gold">EVERYTHING ELSE FOLLOWS.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-6 max-w-2xl leading-relaxed" style={{ fontWeight: 300, color: '#f8f7f7' }}>
@@ -462,7 +462,7 @@ GOLD COAST.
               style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", letterSpacing: "0.03em" }}
             >
               VOLUME ESTATES.{" "}
-              <span className="rk-gold" style={{display: 'block', fontSize: '45px'}}>CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
+              <span className="rk-gold">CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
             </h2>
             <div className="rk-divider mt-4" />
             <p className="text-white/50 text-sm mt-4 max-w-xl" style={{ fontWeight: 300 }}>
