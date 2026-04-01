@@ -45,9 +45,9 @@ export default function Navigation() {
           {/* Logo — Full transparent logo mark */}
           <Link href="/" className="flex items-center group">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/RKLOGO2TRANS_aad14ce9.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/RKLOGO2TRIMMED_64edc24c.png"
               alt="Render King"
-              style={{ width: '120px', height: '120px', objectFit: 'contain' }}
+              style={{ width: '160px', height: '160px', objectFit: 'contain' }}
             />
           </Link>
 
