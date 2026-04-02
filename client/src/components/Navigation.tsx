@@ -47,7 +47,7 @@ export default function Navigation() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/RKLOGO2TRIMMED_64edc24c.png"
               alt="Render King"
-              style={{ width: '160px', height: '160px', objectFit: 'contain', paddingTop: '20px' }}
+              style={{ width: '160px', height: '160px', objectFit: 'contain', paddingTop: '20px', marginLeft: '-34px' }}
             />
           </Link>
 
