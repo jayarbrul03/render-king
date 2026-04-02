@@ -493,40 +493,6 @@ GOLD COAST.
         </div>
       </section>
 
-      {/* ── CLIENTS ── */}
-      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '40px'}}>
-        <div className="container">
-          <div className="text-center mb-10">
-            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>TRUSTED ON SITE.</p>
-            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em", color: '#c9a84c' }}>PROVEN IN THE FIELD.</p>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex justify-center items-center gap-4 lg:gap-7">
-              {clients.slice(0, 4).map((c, i) => (
-                <span
-                  key={i}
-                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-            <div className="flex justify-center items-center gap-4 lg:gap-7">
-              {clients.slice(4).map((c, i) => (
-                <span
-                  key={i}
-                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── TESTIMONIALS ── */}
       <section className="py-24 bg-[#0f0f0f]" style={{paddingTop: '40px', paddingBottom: '80px'}}>
          <div className="container">
@@ -557,6 +523,40 @@ GOLD COAST.
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CLIENTS ── */}
+      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '40px'}}>
+        <div className="container">
+          <div className="text-center mb-10">
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em" }}>TRUSTED ON SITE.</p>
+            <p className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", letterSpacing: "0.06em", color: '#c9a84c' }}>PROVEN IN THE FIELD.</p>
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex justify-center items-center gap-4 lg:gap-7">
+              {clients.slice(0, 4).map((c, i) => (
+                <span
+                  key={i}
+                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
+                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
+            <div className="flex justify-center items-center gap-4 lg:gap-7">
+              {clients.slice(4).map((c, i) => (
+                <span
+                  key={i}
+                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
+                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
+                >
+                  {c}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
