@@ -37,9 +37,9 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "nav-scrolled" : "bg-transparent"
-      }`} style={{height: '150px'}}
+      }`} style={{height: '170px'}}
     >
-      <div className="container" style={{paddingTop: '30px'}}>
+      <div className="container" style={{paddingTop: '30px', paddingBottom: '60px'}}>
         <div className="flex items-center justify-between h-18 py-4">
 
           {/* Logo — Full transparent logo mark */}
@@ -47,7 +47,7 @@ export default function Navigation() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/RKLOGO2TRIMMED_64edc24c.png"
               alt="Render King"
-              style={{ width: '160px', height: '160px', objectFit: 'contain' }}
+              style={{ width: '160px', height: '160px', objectFit: 'contain', paddingTop: '20px' }}
             />
           </Link>
 
