@@ -7,7 +7,7 @@
  * - Portfolio: new aspirational images with landscaping and colour
  * - Clients: real logos section with supplier badges
  * - MCK cross-ref: statement, not question
- * - Contact: real phone 0468 041 477 / projects@renderrender.com.au
+ * - Contact: real phone 0468 041 477 / projects@renderking.au
  */
 import { useEffect } from "react";
 import { Link } from "wouter";

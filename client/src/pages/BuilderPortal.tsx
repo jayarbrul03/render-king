@@ -523,7 +523,7 @@ export default function BuilderPortal() {
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1" style={{ letterSpacing: "0.1em" }}>No files? No problem.</p>
                 <p className="text-gray-500 text-sm" style={{ fontWeight: 300 }}>
                   Submit now and our team will follow up to collect plans. Or email directly to{" "}
-                  <a href="mailto:projects@renderrender.com.au" className="text-[#c9a84c] font-semibold hover:underline">projects@renderrender.com.au</a>
+                  <a href="mailto:projects@renderking.au" className="text-[#c9a84c] font-semibold hover:underline">projects@renderking.au</a>
                 </p>
               </div>
 

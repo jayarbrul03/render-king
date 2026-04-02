@@ -13,7 +13,7 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
     const body = `Name: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
-    window.location.href = `mailto:info@renderking.com.au?subject=Website Enquiry — ${form.company || form.name}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:projects@renderking.au?subject=Website Enquiry — ${form.company || form.name}&body=${encodeURIComponent(body)}`;
     setTimeout(() => {
       toast.success("Your email client has been opened. Please send the email to complete your enquiry.");
       setSending(false);
@@ -106,9 +106,9 @@ export default function Contact() {
                     <Mail size={16} className="rk-gold mt-0.5 shrink-0" />
                     <div>
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1" style={{ letterSpacing: "0.1em", fontWeight: 600 }}>Email</p>
-                      <a href="mailto:info@renderking.com.au" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>info@renderking.com.au</a>
+                      <a href="mailto:projects@renderking.au" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>projects@renderking.au</a>
                       <br />
-                      <a href="mailto:estimating@renderking.com.au" className="text-white/50 hover:text-white text-xs transition-colors" style={{ fontWeight: 300 }}>estimating@renderking.com.au</a>
+                      <a href="mailto:projects@renderking.au" className="text-white/50 hover:text-white text-xs transition-colors" style={{ fontWeight: 300 }}>projects@renderking.au</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
