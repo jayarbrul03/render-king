@@ -32,7 +32,7 @@ const contactFormSchema = z.object({
   company: z.string().optional(),
   phone: z.string().min(6, "Phone number is required"),
   email: z.string().email("Valid email is required"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(1, "Message is required"),
 });
 
 export const appRouter = router({
