@@ -24,7 +24,7 @@ export default function Contact() {
     <div className="min-h-screen bg-[#0f0f0f]">
       <Navigation />
       <section className="pt-32 pb-16 bg-[#0a0a0a] border-b border-white/8">
-        <div className="container">
+        <div className="container" style={{ paddingTop: '70px' }}>
           <p className="rk-section-label mb-3">Get In Touch</p>
           <h1 className="text-white font-black uppercase mb-4" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}>
             CONTACT<br /><span className="rk-gold">RENDER KING.</span>
