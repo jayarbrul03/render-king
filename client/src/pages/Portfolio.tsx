@@ -28,8 +28,8 @@ export default function Portfolio() {
       <Navigation />
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${ESTATE})` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/80 to-[#0f0f0f]" />
-        <div className="relative container">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/80 to-[#0f0f0f]" style={{ paddingTop: '60px' }} />
+        <div className="relative container" style={{ paddingTop: '60px' }}>
           <p className="rk-section-label mb-3">Our Work</p>
           <h1 className="text-white font-black uppercase mb-4" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2.5rem, 6vw, 4rem)", letterSpacing: "0.02em", lineHeight: 0.95 }}>
             VOLUME ESTATES.<br /><span className="rk-gold">CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
@@ -41,7 +41,7 @@ export default function Portfolio() {
         </div>
       </section>
       <section className="pb-24 bg-[#0f0f0f]">
-        <div className="container">
+        <div className="container" style={{ paddingTop: '60px' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/8">
             {projects.map((p, i) => (
               <div key={i} className="group relative overflow-hidden bg-[#0f0f0f]" style={{ aspectRatio: "4/3" }}>
