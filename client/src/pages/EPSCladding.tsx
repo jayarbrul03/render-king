@@ -9,7 +9,7 @@ export default function EPSCladding() {
       <section className="relative h-96 flex items-end overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${HERO_IMG})` }} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
-        <div className="relative container pb-12">
+        <div className="relative container pb-12" style={{ paddingTop: '70px' }}>
           <p className="rk-section-label mb-3">Services</p>
           <h1 className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}>
             EPS CLADDING<br /><span className="rk-gold">SYSTEMS</span>

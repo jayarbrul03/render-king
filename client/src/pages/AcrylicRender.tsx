@@ -23,7 +23,7 @@ export default function AcrylicRender() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: `url(${HERO})` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/80 to-[#0f0f0f]" />
-        <div className="relative container">
+        <div className="relative container" style={{ paddingTop: '70px' }}>
           <p className="rk-section-label mb-3">Core Service</p>
           <h1 className="text-white font-black uppercase mb-6" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", letterSpacing: "0.02em", lineHeight: 0.95 }}>
             ACRYLIC RENDER<br /><span className="rk-gold">&amp; TEXTURE COATINGS.</span>
