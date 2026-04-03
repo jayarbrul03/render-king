@@ -4,20 +4,32 @@ import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", message: "" });
-  const [sending, setSending] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const sendMutation = trpc.contact.send.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      toast.success("Enquiry sent! We'll be in touch within 1 business day.");
+      setForm({ name: "", company: "", phone: "", email: "", message: "" });
+    },
+    onError: (err) => {
+      toast.error(err.message || "Failed to send. Please email projects@renderking.au directly.");
+    },
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSending(true);
-    const body = `Name: ${form.name}\nCompany: ${form.company}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
-    window.location.href = `mailto:projects@renderking.au?subject=Website Enquiry — ${form.company || form.name}&body=${encodeURIComponent(body)}`;
-    setTimeout(() => {
-      toast.success("Your email client has been opened. Please send the email to complete your enquiry.");
-      setSending(false);
-    }, 500);
+    sendMutation.mutate({
+      name: form.name,
+      company: form.company || undefined,
+      phone: form.phone,
+      email: form.email,
+      message: form.message,
+    });
   };
 
   return (
@@ -78,8 +90,8 @@ export default function Contact() {
                     className="w-full bg-[#141414] border border-white/10 text-white/80 text-sm p-4 focus:outline-none focus:border-[#c9a84c] transition-colors resize-none placeholder:text-white/20"
                     style={{ fontFamily: "Montserrat, sans-serif", fontWeight: 300 }} />
                 </div>
-                <button type="submit" disabled={sending} className="rk-btn-gold w-full text-center disabled:opacity-50">
-                  {sending ? "Opening Email Client..." : "Send Enquiry →"}
+                <button type="submit" disabled={sendMutation.isPending} className="rk-btn-gold w-full text-center disabled:opacity-50">
+                  {sendMutation.isPending ? "Sending..." : "Send Enquiry →"}
                 </button>
               </form>
               <div className="mt-6 rk-card">

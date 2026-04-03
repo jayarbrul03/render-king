@@ -3,6 +3,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
+import { sendContactEmail, sendProjectEmail } from "./email";
 import { z } from "zod";
 
 // ─── Project Submission Schema ───────────────────────────────────────────────
@@ -21,12 +22,40 @@ const projectSubmissionSchema = z.object({
   wallArea: z.string().optional(),
   startDate: z.string().optional(),
   notes: z.string().optional(),
-  // Step 3 — File names (actual files are handled client-side via email)
+  // Step 3 — File names (actual files are handled client-side)
   fileNames: z.array(z.string()).optional(),
+});
+
+// ─── Contact Form Schema ─────────────────────────────────────────────────────
+const contactFormSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  company: z.string().optional(),
+  phone: z.string().min(6, "Phone number is required"),
+  email: z.string().email("Valid email is required"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
 export const appRouter = router({
   system: systemRouter,
+
+  // ─── Contact Form ─────────────────────────────────────────────────────────
+  contact: router({
+    send: publicProcedure
+      .input(contactFormSchema)
+      .mutation(async ({ input }) => {
+        try {
+          await sendContactEmail(input);
+          await notifyOwner({
+            title: `📩 Website Enquiry — ${input.company || input.name}`,
+            content: `From: ${input.name}${input.company ? ` (${input.company})` : ""}\nPhone: ${input.phone}\nEmail: ${input.email}\n\nMessage:\n${input.message}`,
+          }).catch(() => {});
+          return { success: true };
+        } catch (error) {
+          console.error("[Contact Form] Email error:", error);
+          throw new Error("Failed to send enquiry. Please try again or email us directly at projects@renderking.au");
+        }
+      }),
+  }),
 
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -42,6 +71,15 @@ export const appRouter = router({
     submit: publicProcedure
       .input(projectSubmissionSchema)
       .mutation(async ({ input }) => {
+        const reference = `RK-${Date.now().toString().slice(-8)}`;
+
+        // Send email via Resend
+        try {
+          await sendProjectEmail({ ...input, reference });
+        } catch (emailError) {
+          console.error("[Project Submission] Email error:", emailError);
+        }
+
         const fileList = input.fileNames && input.fileNames.length > 0
           ? input.fileNames.map((f) => `  • ${f}`).join("\n")
           : "  No files attached — team to follow up";
@@ -76,36 +114,23 @@ ATTACHED FILES (${input.fileNames?.length || 0})
 ${fileList}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Submitted via renderking.com.au/submit-project
-Reference: RK-${Date.now().toString().slice(-8)}
+Reference: ${reference}
         `.trim();
 
-        const notificationTitle = `🏗️ New Project: ${input.companyName} — ${input.suburb}`;
-
         try {
-          const sent = await notifyOwner({
-            title: notificationTitle,
+          await notifyOwner({
+            title: `🏗️ New Project: ${input.companyName} — ${input.suburb}`,
             content: notificationContent,
           });
-
-          return {
-            success: true,
-            notified: sent,
-            reference: `RK-${Date.now().toString().slice(-8)}`,
-            message: sent
-              ? "Project submitted successfully. Our estimating team has been notified and will respond within 1 business day."
-              : "Project received. Our team will be in touch shortly.",
-          };
-        } catch (error) {
-          console.error("[Project Submission] Notification error:", error);
-          // Still return success — submission was received even if notification failed
-          return {
-            success: true,
-            notified: false,
-            reference: `RK-${Date.now().toString().slice(-8)}`,
-            message: "Project received. Our team will be in touch shortly.",
-          };
+        } catch {
+          // non-blocking
         }
+
+        return {
+          success: true,
+          reference,
+          message: "Project submitted successfully. Our estimating team has been notified and will respond within 1 business day.",
+        };
       }),
   }),
 });
