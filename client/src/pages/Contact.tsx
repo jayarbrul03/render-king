@@ -99,7 +99,7 @@ export default function Contact() {
                     <Phone size={16} className="rk-gold mt-0.5 shrink-0" />
                     <div>
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1" style={{ letterSpacing: "0.1em", fontWeight: 600 }}>Phone</p>
-                      <a href="tel:0731234567" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>(07) 3123 4567</a>
+                      <a href="tel:0468041477" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>0468 041 477</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
