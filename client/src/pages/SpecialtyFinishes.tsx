@@ -6,14 +6,15 @@ export default function SpecialtyFinishes() {
   return (
     <div className="min-h-screen bg-[#0f0f0f]">
       <Navigation />
-      <section className="relative h-96 flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${SUNSET_IMG})` }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
-        <div className="relative container pb-12" style={{ paddingTop: '70px' }}>
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: `url(${SUNSET_IMG})` }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/80 to-[#0f0f0f]" />
+        <div className="relative container" style={{ paddingTop: '70px' }}>
           <p className="rk-section-label mb-3">Services</p>
-          <h1 className="text-white font-black uppercase" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}>
+          <h1 className="text-white font-black uppercase mb-6" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "0.03em" }}>
             SPECIALTY<br /><span className="rk-gold">FINISHES</span>
           </h1>
+          <div className="rk-divider mb-6" />
         </div>
       </section>
       <section className="py-20">
