@@ -62,6 +62,7 @@ export default function Navigation() {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
+                onClick={() => setServicesOpen(!servicesOpen)}
                 className={`flex items-center gap-1 text-xs font-semibold uppercase tracking-widest transition-colors duration-200 ${
                   location.startsWith("/services")
                     ? "rk-gold"
