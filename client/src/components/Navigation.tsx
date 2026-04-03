@@ -1,11 +1,9 @@
 /*
- * RENDER KING — Navigation Component v4
- * Clean premium wordmark — no crown icon
- * RENDER in white / KING in gold — stacked, tight, bold
- * Transparent → dark on scroll
- * Persistent "Submit Project" gold CTA + phone number
+ * RENDER KING — Navigation Component v5
+ * Click-toggle Services dropdown with click-outside-to-close
+ * Hover still works on desktop; click works everywhere
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -21,6 +19,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [location] = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -28,10 +27,22 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown when navigating to a new page
   useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
   }, [location]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav
@@ -42,7 +53,7 @@ export default function Navigation() {
       <div className="container" style={{paddingTop: '30px', paddingBottom: '60px'}}>
         <div className="flex items-center justify-between h-18 py-4">
 
-          {/* Logo — Full transparent logo mark */}
+          {/* Logo */}
           <Link href="/" className="flex items-center group">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/RKLOGO2COPY_TRIMMED_d7884842.png"
@@ -56,24 +67,19 @@ export default function Navigation() {
             <NavLink href="/" label="Home" current={location === "/"} />
 
             {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
+            <div ref={dropdownRef} className="relative">
               <button
-                onClick={() => setServicesOpen(!servicesOpen)}
+                onClick={() => setServicesOpen((prev) => !prev)}
                 className={`flex items-center gap-1 text-xs font-semibold uppercase tracking-widest transition-colors duration-200 ${
-                  location.startsWith("/services")
-                    ? "rk-gold"
-                    : "text-white/80 hover:text-white"
+                  location.startsWith("/services") ? "rk-gold" : "text-white/80 hover:text-white"
                 }`}
                 style={{ letterSpacing: "0.12em", color: '#fafafa' }}
               >
-                Services <ChevronDown size={12} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                Services <ChevronDown size={12} className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
+
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-72 bg-[#111] border border-white/10 shadow-2xl">
+                <div className="absolute top-full left-0 mt-2 w-72 bg-[#111] border border-white/10 shadow-2xl z-50">
                   {services.map((s) => (
                     <Link
                       key={s.href}
@@ -127,10 +133,7 @@ export default function Navigation() {
             <MobileNavLink href="/about" label="About" />
             <MobileNavLink href="/safety" label="Safety" />
             <MobileNavLink href="/contact" label="Contact" />
-            <div className="mt-4 space-y-3">
-              <a href="tel:0468041477" className="block text-center text-white/70 text-sm font-semibold py-2">
-                0468 041 477
-              </a>
+            <div className="mt-4">
               <Link href="/submit-project" className="rk-btn-gold w-full text-center block">
                 Submit Project
               </Link>
