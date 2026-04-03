@@ -29,7 +29,7 @@ export default function Portfolio() {
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${ESTATE})` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/80 to-[#0f0f0f]" style={{ paddingTop: '60px' }} />
-        <div className="relative container" style={{ paddingTop: '60px' }}>
+        <div className="relative container" style={{ paddingTop: '70px' }}>
           <p className="rk-section-label mb-3">Our Work</p>
           <h1 className="text-white font-black uppercase mb-4" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(2.5rem, 6vw, 4rem)", letterSpacing: "0.02em", lineHeight: 0.95 }}>
             VOLUME ESTATES.<br /><span className="rk-gold">CUSTOM BUILDS. LOW-SET. HIGH-END.</span>
