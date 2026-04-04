@@ -119,8 +119,6 @@ export default function Contact() {
                     <div>
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1" style={{ letterSpacing: "0.1em", fontWeight: 600 }}>Email</p>
                       <a href="mailto:projects@renderking.au" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>projects@renderking.au</a>
-                      <br />
-                      <a href="mailto:projects@renderking.au" className="text-white/50 hover:text-white text-xs transition-colors" style={{ fontWeight: 300 }}>projects@renderking.au</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
