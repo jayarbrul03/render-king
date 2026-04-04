@@ -1,9 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import AcrylicRender from "./pages/AcrylicRender";
@@ -15,10 +17,20 @@ import About from "./pages/About";
 import Safety from "./pages/Safety";
 import Contact from "./pages/Contact";
 import BuilderPortal from "./pages/BuilderPortal";
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location]);
+  return null;
+}
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
       <Route path="/services/acrylic-render" component={AcrylicRender} />
@@ -32,7 +44,8 @@ function Router() {
       <Route path="/submit-project" component={BuilderPortal} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
-    </Switch>
+      </Switch>
+    </>
   );
 }
 
