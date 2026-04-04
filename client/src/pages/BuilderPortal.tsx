@@ -196,8 +196,8 @@ export default function BuilderPortal() {
       <Navigation />
 
       {/* ── DARK HEADER ── */}
-      <section className="pb-10 bg-[#0a0a0a] border-b border-white/8" style={{ paddingTop: '70px' }}>
-        <div className="container max-w-3xl">
+      <section className="pt-32 pb-10 bg-[#0a0a0a] border-b border-white/8">
+        <div className="container max-w-3xl" style={{ paddingTop: '70px' }}>
           <p className="rk-section-label mb-2">Builder Portal</p>
           <h1
             className="text-white font-black uppercase mb-3"
