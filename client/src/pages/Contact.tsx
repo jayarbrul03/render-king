@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import SEO from "@/components/SEO";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";

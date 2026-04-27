@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 /*
  * RENDER KING — Builder Portal / Submit Project
  * CONVERSION-FIRST DESIGN RULES:
@@ -193,6 +194,11 @@ export default function BuilderPortal() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
+      <SEO
+        title="Submit a Project | Builder Portal — Render King"
+        description="Volume builders: submit plans, specs and photos for a fast render and cladding quote. Render King responds within 1 business day across Brisbane, Ipswich and Gold Coast."
+        canonical="https://renderking.au/submit-project"
+      />
       <Navigation />
 
       {/* ── DARK HEADER ── */}

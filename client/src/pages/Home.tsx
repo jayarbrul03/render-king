@@ -14,6 +14,7 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Clock, Users, Phone, Zap, Shield, Award, Star } from "lucide-react";
+import SEO from "@/components/SEO";
 
 // v5 CDN images
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-hero-v4-premium-kdDLtzCBsKFqnPhHy8aUQV.webp";
@@ -160,6 +161,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0f0f0f]">
+      <SEO
+        title="Render King | Acrylic Render & Cladding Specialists Brisbane & Gold Coast"
+        description="Queensland's largest rendering company. Acrylic render, Hebel AAC, EPS cladding systems, and specialty finishes for volume builders. 24 years. 10,000+ projects. Brisbane, Ipswich & Gold Coast."
+        canonical="https://renderking.au/"
+      />
       <Navigation />
 
       {/* ── HERO ── */}

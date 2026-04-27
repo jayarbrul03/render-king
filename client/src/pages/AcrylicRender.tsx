@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const HERO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v2-estate-JUgBRcX8MbyqQxbsp2dh3F.webp";
 const TEXTURE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663344127014/ksfNM5oyScSHuXPipwyMyz/rk-v2-texture-dYRg9c2L9YQeJmNNKeihRX.webp";
@@ -19,6 +20,11 @@ const systems = [
 export default function AcrylicRender() {
   return (
     <div className="min-h-screen bg-[#0f0f0f]">
+      <SEO
+        title="Acrylic Render Brisbane & Gold Coast | Render King"
+        description="Dulux Acratex accredited acrylic render and texture coatings for volume builders across Brisbane, Ipswich, Morayfield and Gold Coast. All substrates. 24 years experience."
+        canonical="https://renderking.au/services/acrylic-render"
+      />
       <Navigation />
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: `url(${HERO})` }} />
