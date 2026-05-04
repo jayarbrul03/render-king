@@ -8,10 +8,6 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
-import AcrylicRender from "./pages/AcrylicRender";
-import HebelInstall from "./pages/HebelInstall";
-import EPSCladding from "./pages/EPSCladding";
-import SpecialtyFinishes from "./pages/SpecialtyFinishes";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Safety from "./pages/Safety";
@@ -35,10 +31,6 @@ function Router() {
       <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
-      <Route path="/services/acrylic-render" component={AcrylicRender} />
-      <Route path="/services/hebel-installation" component={HebelInstall} />
-      <Route path="/services/eps-cladding" component={EPSCladding} />
-      <Route path="/services/specialty-finishes" component={SpecialtyFinishes} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/safety" component={Safety} />
