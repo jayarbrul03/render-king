@@ -17,6 +17,8 @@ import About from "./pages/About";
 import Safety from "./pages/Safety";
 import Contact from "./pages/Contact";
 import BuilderPortal from "./pages/BuilderPortal";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -42,6 +44,8 @@ function Router() {
       <Route path="/safety" component={Safety} />
       <Route path="/contact" component={Contact} />
       <Route path="/submit-project" component={BuilderPortal} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
       </Switch>

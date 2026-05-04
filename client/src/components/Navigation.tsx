@@ -98,6 +98,7 @@ export default function Navigation() {
             <NavLink href="/about" label="About" current={location === "/about"} />
             <NavLink href="/safety" label="Safety" current={location === "/safety"} />
             <NavLink href="/contact" label="Contact" current={location === "/contact"} />
+            <NavLink href="/blog" label="Blog" current={location.startsWith("/blog")} />
           </div>
 
           {/* CTA */}
@@ -133,6 +134,7 @@ export default function Navigation() {
             <MobileNavLink href="/about" label="About" />
             <MobileNavLink href="/safety" label="Safety" />
             <MobileNavLink href="/contact" label="Contact" />
+            <MobileNavLink href="/blog" label="Blog" />
             <div className="mt-4">
               <Link href="/submit-project" className="rk-btn-gold w-full text-center block">
                 Submit Project

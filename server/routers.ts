@@ -5,6 +5,9 @@ import { publicProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { sendContactEmail, sendProjectEmail } from "./email";
 import { z } from "zod";
+import { getDb } from "./db";
+import { blogPosts } from "../drizzle/schema";
+import { eq, desc } from "drizzle-orm";
 
 // ─── Project Submission Schema ───────────────────────────────────────────────
 const projectSubmissionSchema = z.object({
@@ -37,6 +40,34 @@ const contactFormSchema = z.object({
 
 export const appRouter = router({
   system: systemRouter,
+
+  // ─── Blog ─────────────────────────────────────────────────────────────────
+  blog: router({
+    list: publicProcedure.query(async () => {
+      const db = await getDb();
+      if (!db) return [];
+      return db.select({
+        id: blogPosts.id,
+        slug: blogPosts.slug,
+        title: blogPosts.title,
+        metaDescription: blogPosts.metaDescription,
+        category: blogPosts.category,
+        readTime: blogPosts.readTime,
+        heroImage: blogPosts.heroImage,
+        createdAt: blogPosts.createdAt,
+      }).from(blogPosts).where(eq(blogPosts.published, 1)).orderBy(desc(blogPosts.createdAt));
+    }),
+    bySlug: publicProcedure
+      .input(z.object({ slug: z.string() }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return null;
+        const rows = await db.select().from(blogPosts)
+          .where(eq(blogPosts.slug, input.slug))
+          .limit(1);
+        return rows[0] ?? null;
+      }),
+  }),
 
   // ─── Contact Form ─────────────────────────────────────────────────────────
   contact: router({
