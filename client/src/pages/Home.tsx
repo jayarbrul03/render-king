@@ -198,7 +198,7 @@ export default function Home() {
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
             </p>
             <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300, color: '#d9d9d9', fontSize: '19px' }}>
-              24 years.  10,000+ projects. Delivering across Greater Brisbane, Morayfield, South Brisbane, Ipswich, and down to the Gold Coast.
+              25 years.  10,000+ projects. Delivering across Greater Brisbane, Morayfield, South Brisbane, Ipswich, and down to the Gold Coast.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/submit-project" className="rk-btn-gold">
