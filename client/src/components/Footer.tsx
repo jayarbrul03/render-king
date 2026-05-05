@@ -160,10 +160,10 @@ export default function Footer() {
           <p className="text-white/30 text-xs" style={{ fontWeight: 300, color: '#fcfcfc' }}>
             Render Render Pty Ltd. All rights reserved. Trading as Render King © {new Date().getFullYear()}
           </p>
-          <div className="flex gap-6 flex-wrap justify-center">
-            <span className="text-white/20 text-xs" style={{color: '#000000', backgroundColor: '#ffffff'}}>QBCC Licensed</span>
-            <span className="text-white/20 text-xs" style={{color: '#000000', backgroundColor: '#ffffff'}}>Dulux Acratex Accredited</span>
-            <span className="text-white/20 text-xs" style={{color: '#000000', backgroundColor: '#ffffff'}}>CSR Hebel Approved Installer</span>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <span className="text-white/40 text-xs">QBCC Licence No. 15565729</span>
+            <span className="text-white/20 text-xs">|</span>
+            <span className="text-white/40 text-xs">ABN 58 650 254 256</span>
           </div>
         </div>
       </div>
