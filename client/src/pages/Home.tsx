@@ -34,7 +34,7 @@ const MCK_INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/3105196633441270
 
 const stats = [
   { number: "10,000+", label: "Projects Completed" },
-  { number: "24", label: "Years in the Trade" },
+  { number: "25", label: "Years in Trade and Building Experience" },
   { number: "4–5", label: "Jobs Per Week" },
   { number: "100,000+", label: "Combined Hours" },
 ];
@@ -110,13 +110,13 @@ const clients = [
 
 const testimonials = [
   {
-    quote: "Render King has been our go-to renderer for years. Reliable, consistent, and they communicate. On a volume estate, that's everything.",
+    quote: "Render King has been our go to renderer for years. Reliable, consistent, and they communicate. On a volume estate, that's everything.",
     author: "Site Manager",
-    company: "McCarthy Homes",
+    company: "Morayfield Project",
     stars: 5,
   },
   {
-    quote: "When you run a retirement village, you need a subcontractor you can set and forget. Render King shows up, does the job, and doesn't create problems.",
+    quote: "When you run a volume village, you need a subcontractor you can set and forget. Render King shows up, does the job, and doesn't create problems, they solve them.",
     author: "Project Director",
     company: "Gem Life",
     stars: 5,
@@ -198,7 +198,7 @@ export default function Home() {
               Volume builders across Queensland trust Render King to show up on schedule, communicate clearly, and deliver a consistent finish - every lot, every time.
             </p>
             <p className="text-white/50 text-sm mb-10 max-w-xl leading-relaxed" style={{ fontWeight: 300, color: '#d9d9d9', fontSize: '19px' }}>
-              24 years.  10,000+ projects. 4–5 jobs a week across Greater Brisbane, Morayfield to Ipswich, and down to the Gold Coast.
+              24 years.  10,000+ projects. Delivering across Greater Brisbane, Morayfield, South Brisbane, Ipswich, and down to the Gold Coast.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/submit-project" className="rk-btn-gold">
@@ -433,7 +433,7 @@ GOLD COAST.
             </h2>
             <div className="rk-divider mb-8" />
             <p className="text-white/70 text-base leading-relaxed mb-6" style={{ fontWeight: '400', color: '#fafafa' }}>
-              Our primary focus is Greater Brisbane and the volume corridors — Morayfield, North Lakes, Ipswich, Springfield, Logan, and down to the Gold Coast. We run multiple crews simultaneously and are actively placing new managers to expand our Queensland coverage.
+              Our primary focus is Greater Brisbane and the volume corridors of South Brisbane, Leading work out to Morayfield, North Lakes, Ipswich, Springfield, Logan, Ipswich and down to the Gold Coast. We run multiple crews simultaneously and are actively placing new managers to expand our Queensland coverage.
             </p>
             <p className="text-white/50 text-sm leading-relaxed mb-8" style={{ fontWeight: 300, color: '#fafafa', fontSize: '16px' }}>
               Matty Mannion started in the trade and built one of Queensland's largest rendering operations from the ground up. Two render jobs a week personally for 20 years — over 2,000 jobs. With crews running 4–5 jobs a week for the past 8 years, we've crossed 10,000 projects combined.
