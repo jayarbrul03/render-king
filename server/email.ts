@@ -132,3 +132,81 @@ export async function sendProjectEmail(input: ProjectEmailInput): Promise<void> 
     throw new Error(`Resend error: ${error.message}`);
   }
 }
+
+// ─── Blog Email Blast ─────────────────────────────────────────────────────────
+export interface BlogBlastPost {
+  id: number;
+  title: string;
+  slug: string;
+  metaDescription: string;
+  category: string;
+  content: string;
+  readTime: string;
+}
+
+export interface BlogBlastClient {
+  id: number;
+  name: string;
+  email: string;
+  company?: string | null;
+}
+
+export async function sendBlogBlast(
+  post: BlogBlastPost,
+  clients: BlogBlastClient[]
+): Promise<{ sent: number; failed: number }> {
+  const resend = getResend();
+  let sent = 0;
+  let failed = 0;
+
+  // Strip markdown to a short preview (first ~300 chars of plain text)
+  const plainPreview = post.content
+    .replace(/#{1,6}\s+/g, "")
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\*(.+?)\*/g, "$1")
+    .replace(/\[(.+?)\]\(.+?\)/g, "$1")
+    .replace(/\n+/g, " ")
+    .trim()
+    .slice(0, 300);
+
+  const postUrl = `https://renderking.au/blog/${post.slug}`;
+
+  for (const client of clients) {
+    const html = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0f0f0f; color: #f2f2f2; padding: 32px; border-radius: 8px;">
+        <div style="border-bottom: 2px solid #c9a84c; padding-bottom: 16px; margin-bottom: 24px;">
+          <h1 style="color: #c9a84c; font-size: 18px; margin: 0; text-transform: uppercase; letter-spacing: 0.1em;">Render King</h1>
+          <p style="color: #888; font-size: 11px; margin: 4px 0 0; text-transform: uppercase; letter-spacing: 0.08em;">${post.category} · ${post.readTime}</p>
+        </div>
+        <h2 style="color: #ffffff; font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 16px; line-height: 1.2;">${post.title}</h2>
+        <p style="color: #c9a84c; font-size: 14px; font-style: italic; margin: 0 0 20px; line-height: 1.6;">${post.metaDescription}</p>
+        <p style="color: #d9d9d9; font-size: 14px; line-height: 1.7; margin: 0 0 28px;">${plainPreview}…</p>
+        <a href="${postUrl}" style="display: inline-block; background: #c9a84c; color: #0f0f0f; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.14em; padding: 14px 32px; text-decoration: none;">Read Full Article →</a>
+        <p style="color: #444; font-size: 11px; border-top: 1px solid #222; padding-top: 20px; margin: 32px 0 0;">
+          Hi ${client.name}${client.company ? ` (${client.company})` : ""}, you're receiving this because you're a valued Render King client.<br/>
+          <a href="mailto:projects@renderking.au?subject=Unsubscribe" style="color: #666;">Unsubscribe</a>
+        </p>
+      </div>
+    `;
+
+    try {
+      const { error } = await resend.emails.send({
+        from: FROM_ADDRESS,
+        to: client.email,
+        subject: `${post.title} — Render King`,
+        html,
+      });
+      if (error) {
+        console.error(`[BlogBlast] Failed to send to ${client.email}:`, error);
+        failed++;
+      } else {
+        sent++;
+      }
+    } catch (err) {
+      console.error(`[BlogBlast] Exception sending to ${client.email}:`, err);
+      failed++;
+    }
+  }
+
+  return { sent, failed };
+}

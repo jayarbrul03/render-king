@@ -15,6 +15,13 @@
       "when": 1777856924932,
       "tag": "0001_supreme_nicolaos",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1777942926499,
+      "tag": "0002_tricky_post",
+      "breakpoints": true
     }
   ]
 }

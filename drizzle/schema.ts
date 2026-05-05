@@ -42,3 +42,16 @@ export const blogPosts = mysqlTable("blog_posts", {
 
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type InsertBlogPost = typeof blogPosts.$inferInsert;
+
+// Client email list for blog blast
+export const clientEmails = mysqlTable("client_emails", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 128 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  company: varchar("company", { length: 128 }),
+  active: int("active").notNull().default(1),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type ClientEmail = typeof clientEmails.$inferSelect;
+export type InsertClientEmail = typeof clientEmails.$inferInsert;
