@@ -44,21 +44,21 @@ const coreServices = [
   {
     title: "Acrylic Render",
     desc: "Queensland's most trusted acrylic render applicator. All substrates — brick, block, Hebel, EPS, Blueboard. Dulux Acratex accredited. Volume estates to custom builds.",
-    href: "/services/acrylic-render",
+    href: "/services#acrylic-render",
     img: DOUBLE_IMG,
     badge: "Core Service",
   },
   {
     title: "Texture Coatings",
     desc: "Full range of texture coat systems — fine sand, medium sand, rough cast, and premium Dulux Acratex finishes. Consistent lot-to-lot colour and texture matching across every stage.",
-    href: "/services/acrylic-render",
+    href: "/services#acrylic-render",
     img: TEXTURE_IMG,
     badge: "Core Service",
   },
   {
     title: "Specialty Finishes",
     desc: "Premium external finishes including Dulux Acratex premium systems, combined render and paint packages and external microcement on facades, pools, and outdoor areas.",
-    href: "/services/specialty-finishes",
+    href: "/services#specialty-finishes",
     img: SPECIALTY_IMG,
     badge: "Premium Finish",
   },
@@ -68,13 +68,13 @@ const addOnServices = [
   {
     title: "Hebel Supply & Install",
     desc: "We work with selected builders on the whole wall system — Hebel supply, install, and render under one subcontractor. Focused delivery, no handoff gaps.",
-    href: "/services/hebel-installation",
+    href: "/services#hebel",
     img: HEBEL_EXT_IMG,
   },
   {
     title: "EPS Cladding Systems",
     desc: "Full EPS cladding system supply and installation. Lightweight, insulating, cost-effective. Residential and low-rise only. Supplied and installed, then rendered by our crew.",
-    href: "/services/eps-cladding",
+    href: "/services#eps-cladding",
     img: ESTATE_IMG,
   },
 ];
