@@ -114,3 +114,7 @@
 - [x] Section headings: strong hierarchy, not competing with dark background
 - [x] CTA button at bottom of each step must be unmissable — gold, full width on mobile
 - [x] Hard rule locked in: if any section doesn't enhance connection or retention, it gets reworked
+
+## Automation & Scheduled Tasks
+- [x] Automated blog draft generation — Tue/Thu 7am AEST, saves as draft, notifies owner
+- [x] Weekly site health audit — Monday 8am AEST, checks all pages + DB, notifies owner

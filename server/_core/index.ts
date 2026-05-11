@@ -1,4 +1,5 @@
 import "dotenv/config";
+import { registerCronJobs } from "../cron";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
@@ -63,3 +64,6 @@ async function startServer() {
 }
 
 startServer().catch(console.error);
+
+// Register scheduled cron jobs
+registerCronJobs();
