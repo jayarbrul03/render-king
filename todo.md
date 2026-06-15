@@ -118,3 +118,8 @@
 ## Automation & Scheduled Tasks
 - [x] Automated blog draft generation — Tue/Thu 7am AEST, saves as draft, notifies owner
 - [x] Weekly site health audit — Monday 8am AEST, checks all pages + DB, notifies owner
+- [x] Fix admin auth gate — proper login/not-admin screens instead of silent redirect
+- [x] Admin dashboard — blog draft queue with drafts-first sorting and orange badge
+- [x] Admin dashboard — SEO audit panel with per-page pass/fail checklist
+- [x] Admin dashboard — keyword tracker with Google Search + Maps quick-check links
+- [x] Admin dashboard — Google tools panel (Search Console, GA4, GBP direct links)
