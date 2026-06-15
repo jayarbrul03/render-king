@@ -130,14 +130,14 @@ Return a JSON object with these exact fields:
       readTime: parsed.readTime,
       heroImage: null,
       content: parsed.content,
-      published: 0, // Always draft — never auto-publish
+      published: 1, // Auto-publish live as requested
     });
 
-    console.log(`[CRON] Blog draft created: "${parsed.title}"`);
+    console.log(`[CRON] Blog post auto-published: "${parsed.title}"`);
 
     await notifyOwner({
-      title: "📝 New Blog Draft Ready for Review",
-      content: `A new blog draft has been auto-generated and is waiting for your review before publishing.\n\n**Title:** ${parsed.title}\n**Category:** ${parsed.category}\n**Read time:** ${parsed.readTime}\n\nLog in to renderking.au/admin/blog to review, edit, and publish.`,
+      title: "🚀 New Blog Post Auto-Published",
+      content: `A new blog post has been auto-generated and published live on renderking.au.\n\n**Title:** ${parsed.title}\n**Category:** ${parsed.category}\n**Read time:** ${parsed.readTime}\n**URL:** https://renderking.au/blog/${uniqueSlug}\n\nLog in to renderking.au/admin/blog to review, edit, or unpublish if needed.`,
     });
   } catch (err) {
     console.error("[CRON] Blog generation failed:", err);
