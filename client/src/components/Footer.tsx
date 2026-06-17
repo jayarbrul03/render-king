@@ -63,10 +63,10 @@ export default function Footer() {
               A Render Render Pty Ltd Company
             </p>
             <div className="flex gap-4">
-              <a href="https://instagram.com/renderking" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#c9a84c] transition-colors">
+              <a href="https://www.instagram.com/renderking.au/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#c9a84c] transition-colors">
                 <Instagram size={40} />
               </a>
-              <a href="https://facebook.com/renderking" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#c9a84c] transition-colors">
+              <a href="https://www.facebook.com/RenderKing.au/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#c9a84c] transition-colors">
                 <Facebook size={40} />
               </a>
             </div>
