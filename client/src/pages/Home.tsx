@@ -104,8 +104,8 @@ const deliveryPoints = [
 ];
 
 const clients = [
-  "■  AUSBUILD", "■  GEM LIFE", "■  METRICON", "■  STYLEMASTER",
-  "■  PARADE HOMES", "■  MCCARTHY HOMES", "■  TAYLORD CONSTRUCTION",
+  "AUSBUILD", "GEM LIFE", "METRICON", "STYLEMASTER",
+  "PARADE HOMES", "MCCARTHY HOMES", "TAYLORD CONSTRUCTION",
 ];
 
 const testimonials = [
@@ -534,31 +534,19 @@ GOLD COAST.
       </section>
 
       {/* ── CLIENTS ── */}
-      <section className="py-16 bg-[#111] border-y border-white/6" style={{paddingTop: '40px'}}>
+      <section className="py-10 bg-[#111] border-y border-white/6">
         <div className="container">
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex justify-center items-center gap-4 lg:gap-7">
-              {clients.slice(0, 4).map((c, i) => (
-                <span
-                  key={i}
-                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-            <div className="flex justify-center items-center gap-4 lg:gap-7">
-              {clients.slice(4).map((c, i) => (
-                <span
-                  key={i}
-                  className="text-white/25 hover:text-white/60 font-black uppercase text-sm tracking-widest transition-colors duration-200"
-                  style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf' }}
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
+          <p className="text-center text-white/30 text-xs uppercase tracking-widest mb-6" style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.2em" }}>Trusted by Queensland's leading builders</p>
+          <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
+            {clients.map((c, i) => (
+              <span
+                key={i}
+                className="font-black uppercase tracking-widest transition-colors duration-200 hover:text-white/80"
+                style={{ fontFamily: "Montserrat, sans-serif", letterSpacing: "0.18em", color: '#cfcfcf', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
+              >
+                {c}
+              </span>
+            ))}
           </div>
         </div>
       </section>
