@@ -28,9 +28,8 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-3">
             <SupplierBadge name="Dulux Acratex" />
             <SupplierBadge name="CSR Hebel" />
-            <SupplierBadge name="Ensulite" />
+            <SupplierBadge name="Dulux Exsulite" />
             <SupplierBadge name="Rockcote" />
-            <SupplierBadge name="Hi-Cam" />
             <SupplierBadge name="Hychem" />
             <SupplierBadge name="Ideal Works" />
           </div>
