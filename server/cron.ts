@@ -13,7 +13,16 @@ import { invokeLLM } from "./_core/llm";
 import { notifyOwner } from "./_core/notification";
 
 // ─── Blog Topics Pool ─────────────────────────────────────────────────────────
+// Authority sources to reference in posts (outbound links boost SEO trust):
+// - Dulux Acratex product overview: https://www.dulux.com.au/specifier/products/acratex/overview/
+// - Dulux Exsulite system: https://www.exsulite.com.au/
+// - Exsulite CodeMark cert: https://register.cmicert.com.au/certificates/Dulux/6673EXSUnzCombinationManualRevised_V3-NO_CROPS.pdf
+// - CSR Hebel technical docs: https://hebel.com.au/resources/technical-documents/
+// - NCC Part F3 wall cladding: https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one/f-health-and-amenity/part-f3-roof-and-wall-cladding
+// - QDC Part 2.5 external cladding: https://www.housing.qld.gov.au/__data/assets/pdf_file/0025/15289/QDC-2.5-external-use-of-cladding.pdf
+// - Dulux Acratex EPS substrate guide: https://assets.ctfassets.net/j001bqnk84dk/2r9wOCBXEhtanqGIxZy5ZY/45b75629e3643bade2e7e2db96d0ee70/Substrate_Guide_-_EPS.pdf
 const BLOG_TOPICS = [
+  // Original topics
   "volume builder partnerships and rendering timelines in South East Queensland",
   "acrylic render vs cement render for Queensland homes — what volume builders need to know",
   "Hebel AAC panels: why they're the fastest cladding system for residential builds",
@@ -34,6 +43,40 @@ const BLOG_TOPICS = [
   "how Render King's warranty system protects builders and homeowners long-term",
   "new acrylic render colour palettes for 2025 — what's trending in SEQ estates",
   "substrate preparation for Hebel and EPS — the step most renderers skip",
+  // Dulux Acratex product-focused topics
+  "Dulux Acratex AcraShield 955: the high-build elastomeric system Queensland volume builders are specifying",
+  "what is Dulux Acratex and why does approved applicator status matter for your build",
+  "Dulux Acratex texture systems: micron thickness, flexibility ratings, and why they outperform standard render",
+  "Dulux Acratex colour systems for residential estates — how to spec the right finish for SEQ conditions",
+  "Dulux Acratex vs standard acrylic render: a technical comparison for Queensland builders",
+  "how Dulux Acratex warranty protection works and what it means for volume builder liability",
+  "Dulux Acratex approved applicator program: what it takes and why Render King holds accreditation",
+  "Dulux Acratex system layers explained: base coat, reinforcing mesh, texture coat, and topcoat",
+  // Dulux Exsulite-focused topics
+  "Dulux Exsulite EPS cladding system: the complete guide for Queensland residential builders",
+  "what is the Dulux Exsulite system and why is it CodeMark certified for Australian residential construction",
+  "Dulux Exsulite vs standard EPS cladding: what the CodeMark certification actually means for your project",
+  "Dulux Exsulite installation on timber and steel frame: substrate requirements and fixing specifications",
+  "Dulux Exsulite thermal performance: R-values, energy efficiency, and NCC compliance for Queensland homes",
+  "Dulux Exsulite render system: from EPS board to finished acrylic texture — the full installation sequence",
+  "why Dulux Exsulite is the preferred lightweight cladding system for volume residential estates in SEQ",
+  "Dulux Exsulite non-cavity facade system: what builders need to know before specifying",
+  // NCC / compliance / authority topics
+  "NCC 2022 external wall cladding requirements: what Queensland residential builders need to know",
+  "EPS cladding compliance in Queensland: Class 1 buildings, QDC Part 2.5, and what your renderer must know",
+  "CodeMark certification explained: why it matters when selecting a lightweight cladding system",
+  "external wall insulation and finish systems (EIFS) in Queensland: compliance, performance, and installation",
+  "QDC Part 2.5 and EPS cladding: the Queensland government rules every volume builder should understand",
+  "fire compliance for external cladding on Queensland residential builds — what the NCC actually requires",
+  // Technical / system integration topics
+  "lightweight cladding systems for residential construction: EPS, Hebel, and acrylic render compared",
+  "external wall systems integration: how render, cladding, and waterproofing work together on a volume estate",
+  "how to spec an external wall system for a Queensland volume estate — a builder's technical checklist",
+  "render system micron thickness: what it means for durability, warranty, and long-term performance",
+  "the role of reinforcing mesh in acrylic render systems — why it's non-negotiable on EPS and Hebel substrates",
+  "CSR Hebel PowerPanelXL: technical specs, fixing requirements, and render compatibility for SEQ builders",
+  "how to avoid render cracking on large residential estates — substrate prep, movement joints, and system selection",
+  "render and cladding defects on volume builds: the top 5 causes and how Render King eliminates them",
 ];
 
 // ─── Auto-generate a blog draft ───────────────────────────────────────────────
@@ -63,8 +106,21 @@ export async function autoGenerateBlogDraft(): Promise<void> {
   const systemPrompt = `You are an expert construction industry content writer for Render King, Queensland's premier rendering and cladding company.
 Write SEO-optimised blog articles targeting volume builders and residential builders in South East Queensland (Brisbane, Gold Coast, Ipswich, Morayfield, Springfield, Logan, North Lakes).
 Tone: authoritative, professional, direct. No fluff. Positive industry content. Sound like a real trade expert, not an AI.
-The company: Render King — QBCC Licence 15565729, ABN 58 650 254 256, 25+ years experience, Dulux Acratex accredited.
-Services: Acrylic Render, Hebel AAC Supply & Install, EPS Cladding Systems, Specialty Finishes.
+The company: Render King — QBCC Licence 15565729, ABN 58 650 254 256, 25+ years experience, Dulux Acratex accredited approved applicator.
+Services: Acrylic Render, Hebel AAC Supply & Install, EPS Cladding Systems, Dulux Exsulite lightweight cladding, Specialty Finishes.
+
+SEO LINKING RULES (critical):
+- Where relevant, include outbound links to authoritative sources using markdown hyperlink syntax: [anchor text](URL)
+- Use these real authority URLs when appropriate:
+  * Dulux Acratex products: https://www.dulux.com.au/specifier/products/acratex/overview/
+  * Dulux Exsulite system: https://www.exsulite.com.au/
+  * CSR Hebel technical docs: https://hebel.com.au/resources/technical-documents/
+  * NCC Part F3 wall cladding: https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one/f-health-and-amenity/part-f3-roof-and-wall-cladding
+  * QDC Part 2.5 external cladding (Queensland government): https://www.housing.qld.gov.au/__data/assets/pdf_file/0025/15289/QDC-2.5-external-use-of-cladding.pdf
+  * Dulux Acratex EPS substrate guide: https://assets.ctfassets.net/j001bqnk84dk/2r9wOCBXEhtanqGIxZy5ZY/45b75629e3643bade2e7e2db96d0ee70/Substrate_Guide_-_EPS.pdf
+- Include 2-4 outbound authority links per article where naturally relevant
+- Always link back to Render King service pages: [our acrylic render service](https://renderking.au/services#acrylic-render), [Hebel installation](https://renderking.au/services#hebel), [EPS cladding](https://renderking.au/services#eps-cladding)
+- Minimum 800 words. Use specific technical terms, product names, and compliance references to signal expertise.
 Always output valid JSON only — no markdown fences, no extra text.`;
 
   const userPrompt = `Write a complete SEO blog article about: "${chosenTopic}"
@@ -223,9 +279,13 @@ export async function runHealthAudit(): Promise<void> {
 
 // ─── Register cron schedules ──────────────────────────────────────────────────
 export function registerCronJobs(): void {
-  // Blog auto-generation: Tuesday & Thursday at 7am AEST (UTC+10 → 21:00 UTC Mon/Wed)
-  // Cron: "0 21 * * 1,3" = 9pm UTC Monday and Wednesday = 7am AEST Tuesday and Thursday
-  cron.schedule("0 21 * * 1,3", () => {
+  // Blog auto-generation: Mon/Tue/Thu/Fri at 7am AEST (4x per week)
+  // UTC+10: 7am AEST = 9pm UTC previous day
+  // Mon 7am AEST = Sun 21:00 UTC (cron day 0)
+  // Tue 7am AEST = Mon 21:00 UTC (cron day 1)
+  // Thu 7am AEST = Wed 21:00 UTC (cron day 3)
+  // Fri 7am AEST = Thu 21:00 UTC (cron day 4)
+  cron.schedule("0 21 * * 0,1,3,4", () => {
     autoGenerateBlogDraft().catch(err =>
       console.error("[CRON] Unhandled error in blog generation:", err)
     );
@@ -240,6 +300,6 @@ export function registerCronJobs(): void {
   });
 
   console.log("[CRON] Scheduled jobs registered:");
-  console.log("  → Blog auto-generation: Tuesday & Thursday 7am AEST");
+  console.log("  → Blog auto-generation: Mon/Tue/Thu/Fri 7am AEST (4x per week)");
   console.log("  → Weekly health audit: Monday 8am AEST");
 }
