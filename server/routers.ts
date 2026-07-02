@@ -1,11 +1,14 @@
-import { COOKIE_NAME } from "@shared/const";
+import { COOKIE_NAME, ONE_YEAR_MS, UNAUTHED_ERR_MSG } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
+import { ENV } from "./_core/env";
+import { verifyPassword } from "./_core/password";
+import { sdk } from "./_core/sdk";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { notifyOwner } from "./_core/notification";
 import { sendContactEmail, sendProjectEmail, sendBlogBlast } from "./email";
 import { z } from "zod";
-import { getDb } from "./db";
+import { getDb, getUserByOpenId, upsertUser } from "./db";
 import { blogPosts, clientEmails } from "../drizzle/schema";
 import { eq, desc } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
@@ -287,6 +290,63 @@ Return a JSON object with these exact fields:
 
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
+    login: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email(),
+          password: z.string().min(1),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        if (!ENV.adminEmail || !ENV.adminPassword) {
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Admin login is not configured on the server.",
+          });
+        }
+
+        const email = input.email.trim().toLowerCase();
+        const isValidEmail = email === ENV.adminEmail.trim().toLowerCase();
+        const isValidPassword = verifyPassword(input.password, ENV.adminPassword);
+
+        if (!isValidEmail || !isValidPassword) {
+          throw new TRPCError({
+            code: "UNAUTHORIZED",
+            message: UNAUTHED_ERR_MSG,
+          });
+        }
+
+        const openId = `local:${email}`;
+        await upsertUser({
+          openId,
+          email,
+          name: "Admin",
+          loginMethod: "password",
+          role: "admin",
+          lastSignedIn: new Date(),
+        });
+
+        const sessionToken = await sdk.createSessionToken(openId, {
+          name: "Admin",
+          expiresInMs: ONE_YEAR_MS,
+        });
+
+        const cookieOptions = getSessionCookieOptions(ctx.req);
+        ctx.res.cookie(COOKIE_NAME, sessionToken, {
+          ...cookieOptions,
+          maxAge: ONE_YEAR_MS,
+        });
+
+        const user = await getUserByOpenId(openId);
+        if (!user) {
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Failed to create admin session.",
+          });
+        }
+
+        return user;
+      }),
     logout: publicProcedure.mutation(({ ctx }) => {
       const cookieOptions = getSessionCookieOptions(ctx.req);
       ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });

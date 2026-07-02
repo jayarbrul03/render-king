@@ -210,3 +210,39 @@ export async function sendBlogBlast(
 
   return { sent, failed };
 }
+
+// ─── Owner notifications (blog cron, contact, project submissions) ─────────────
+export interface OwnerNotificationInput {
+  title: string;
+  content: string;
+}
+
+export async function sendOwnerNotification(
+  input: OwnerNotificationInput
+): Promise<void> {
+  const resend = getResend();
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0f0f0f; color: #f2f2f2; padding: 32px; border-radius: 8px;">
+      <div style="border-bottom: 2px solid #c9a84c; padding-bottom: 16px; margin-bottom: 24px;">
+        <h1 style="color: #c9a84c; font-size: 18px; margin: 0; text-transform: uppercase; letter-spacing: 0.1em;">Render King</h1>
+        <p style="color: #888; font-size: 12px; margin: 4px 0 0; text-transform: uppercase; letter-spacing: 0.08em;">Site Notification</p>
+      </div>
+      <h2 style="color: #f2f2f2; font-size: 16px; margin: 0 0 16px;">${input.title}</h2>
+      <div style="background: #1a1a1a; border-left: 3px solid #c9a84c; padding: 16px; border-radius: 4px;">
+        <p style="color: #f2f2f2; font-size: 14px; line-height: 1.6; margin: 0; white-space: pre-wrap;">${input.content}</p>
+      </div>
+      <p style="color: #555; font-size: 11px; border-top: 1px solid #222; padding-top: 16px; margin: 16px 0 0;">renderking.au automated notification</p>
+    </div>
+  `;
+
+  const { error } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to: ENV.ownerEmail || TO_ADDRESS,
+    subject: input.title,
+    html,
+  });
+
+  if (error) {
+    throw new Error(`Resend error: ${error.message}`);
+  }
+}

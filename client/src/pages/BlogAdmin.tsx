@@ -12,9 +12,8 @@ import {
   Eye, EyeOff, Trash2, Send, Plus, UserX, UserCheck,
   Loader2, ChevronDown, ChevronUp, ExternalLink, CheckCircle,
   XCircle, AlertCircle, Search, BarChart2, FileText, Globe,
-  Lock, LogIn
+  Lock, LogIn, LogOut
 } from "lucide-react";
-import { getLoginUrl } from "@/const";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface BlogPost {
@@ -699,9 +698,65 @@ function GoogleToolsPanel() {
   );
 }
 
+// ─── Admin Login Form ─────────────────────────────────────────────────────────
+function AdminLoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const utils = trpc.useUtils();
+  const loginMutation = trpc.auth.login.useMutation({
+    onSuccess: (user) => {
+      utils.auth.me.setData(undefined, user);
+      toast.success("Logged in successfully");
+    },
+    onError: () => {
+      toast.error("Invalid email or password");
+    },
+  });
+
+  return (
+    <form
+      className="w-full max-w-sm flex flex-col gap-4"
+      onSubmit={(e) => {
+        e.preventDefault();
+        loginMutation.mutate({ email, password });
+      }}
+    >
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+        required
+        className="w-full px-4 py-3 text-sm bg-white/5 border border-white/10 rounded-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#c9a84c]"
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        required
+        className="w-full px-4 py-3 text-sm bg-white/5 border border-white/10 rounded-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#c9a84c]"
+      />
+      <button
+        type="submit"
+        disabled={loginMutation.isPending}
+        className="flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-widest transition-opacity disabled:opacity-50"
+        style={{ background: "#c9a84c", color: "#0f0f0f" }}
+      >
+        {loginMutation.isPending ? (
+          <Loader2 size={14} className="animate-spin" />
+        ) : (
+          <LogIn size={14} />
+        )}
+        Log In
+      </button>
+    </form>
+  );
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function BlogAdmin() {
-  const { user, loading } = useAuth();
+  const { user, loading, refresh } = useAuth();
 
   // Loading state
   if (loading) {
@@ -724,15 +779,9 @@ export default function BlogAdmin() {
           <Lock size={32} className="text-white/20 mb-4" />
           <h2 className="text-xl font-black uppercase tracking-tight text-white mb-2">Admin Access Required</h2>
           <p className="text-white/40 text-sm mb-6 max-w-sm">
-            You need to be logged in with an admin account to access this panel.
+            Sign in with your admin email and password.
           </p>
-          <a
-            href={getLoginUrl()}
-            className="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-widest transition-opacity"
-            style={{ background: "#c9a84c", color: "#0f0f0f" }}
-          >
-            <LogIn size={14} /> Log In
-          </a>
+          <AdminLoginForm />
         </div>
         <Footer />
       </div>
@@ -759,11 +808,20 @@ export default function BlogAdmin() {
     );
   }
 
-  return <AdminDashboard user={{ name: user.name ?? "Admin", role: user.role }} />;
+  console.log("user: ", user);
+
+  return <AdminDashboard user={{ name: user.name ?? "Admin", role: user.role }} onLogout={refresh} />;
 }
 
 // ─── Admin Dashboard (only renders when user is confirmed admin) ───────────────
-function AdminDashboard({ user }: { user: { name: string; role: string } }) {
+function AdminDashboard({
+  user,
+  onLogout,
+}: {
+  user: { name: string; role: string };
+  onLogout: () => void;
+}) {
+  const { logout } = useAuth();
   const {
     data: posts,
     isLoading: postsLoading,
@@ -789,7 +847,8 @@ function AdminDashboard({ user }: { user: { name: string; role: string } }) {
         <div className="max-w-5xl mx-auto px-6 pb-24">
 
           {/* Header */}
-          <div className="mb-10 border-b border-white/10 pb-8">
+          <div className="mb-10 border-b border-white/10 pb-8 flex items-start justify-between gap-4">
+            <div>
             <p className="text-xs uppercase tracking-[0.2em] mb-3" style={{ color: "#c9a84c" }}>
               Admin Panel · {user.name}
             </p>
@@ -799,6 +858,17 @@ function AdminDashboard({ user }: { user: { name: string; role: string } }) {
             <p className="text-white/40 text-sm">
               Blog management · SEO audit · Keyword tracking · Google tools
             </p>
+            </div>
+            <button
+              type="button"
+              onClick={async () => {
+                await logout();
+                onLogout();
+              }}
+              className="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest border border-white/10 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+            >
+              <LogOut size={12} /> Log Out
+            </button>
           </div>
 
           {/* Stats bar */}
