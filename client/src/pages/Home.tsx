@@ -7,12 +7,16 @@
  * - Portfolio: new aspirational images with landscaping and colour
  * - Clients: real logos section with supplier badges
  * - MCK cross-ref: statement, not question
- * - Contact: real phone 0468 041 477 / projects@renderking.au
+ * - Contact: real phone 0452 295 212 / admin@renderking.au
  */
 import { useEffect } from "react";
 import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import {
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+} from "@shared/const";
 import { ArrowRight, CheckCircle, Clock, Users, Phone, Zap, Shield, Award, Star } from "lucide-react";
 import SEO from "@/components/SEO";
 
@@ -204,7 +208,7 @@ export default function Home() {
               <Link href="/submit-project" className="rk-btn-gold">
                 Submit a Project
               </Link>
-              <a href="tel:0468041477" className="rk-btn-outline">
+              <a href={`tel:${CONTACT_PHONE}`} className="rk-btn-outline">
                 Call Us Now
               </a>
             </div>
@@ -630,8 +634,8 @@ GOLD COAST.
             <Link href="/submit-project" className="rk-btn-gold">
               Submit a Project
             </Link>
-            <a href="tel:0468041477" className="rk-btn-outline">
-              Call 0468 041 477
+            <a href={`tel:${CONTACT_PHONE}`} className="rk-btn-outline">
+              Call {CONTACT_PHONE_DISPLAY}
             </a>
           </div>
         </div>

@@ -77,7 +77,7 @@ Return a JSON object with these exact fields:
   "slug": "url-friendly-slug-max-60-chars",
   "metaDescription": "SEO meta description 140-160 chars",
   "readTime": "X min read",
-  "content": "Full markdown article body, minimum 900 words. Use ## headings, bullet points where appropriate. Include Brisbane/Gold Coast/SEQ references. Include 2-4 outbound authority links. End with a strong CTA to contact Render King at projects@renderking.au or call 0468 041 477."
+  "content": "Full markdown article body, minimum 900 words. Use ## headings, bullet points where appropriate. Include Brisbane/Gold Coast/SEQ references. Include 2-4 outbound authority links. End with a strong CTA to contact Render King at admin@renderking.au or call 0452 295 212."
 }`;
 
   const res = await fetch(`${FORGE_URL}/v1/chat/completions`, {

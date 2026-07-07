@@ -1,8 +1,9 @@
 import { Resend } from "resend";
 import { ENV } from "./_core/env";
+import { CONTACT_EMAIL } from "../shared/const";
 
 const FROM_ADDRESS = "Render King <noreply@renderking.au>";
-const TO_ADDRESS = "projects@renderking.au";
+const TO_ADDRESS = CONTACT_EMAIL;
 
 function getResend(): Resend {
   if (!ENV.resendApiKey) {
@@ -184,7 +185,7 @@ export async function sendBlogBlast(
         <a href="${postUrl}" style="display: inline-block; background: #c9a84c; color: #0f0f0f; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.14em; padding: 14px 32px; text-decoration: none;">Read Full Article →</a>
         <p style="color: #444; font-size: 11px; border-top: 1px solid #222; padding-top: 20px; margin: 32px 0 0;">
           Hi ${client.name}${client.company ? ` (${client.company})` : ""}, you're receiving this because you're a valued Render King client.<br/>
-          <a href="mailto:projects@renderking.au?subject=Unsubscribe" style="color: #666;">Unsubscribe</a>
+          <a href="mailto:${CONTACT_EMAIL}?subject=Unsubscribe" style="color: #666;">Unsubscribe</a>
         </p>
       </div>
     `;

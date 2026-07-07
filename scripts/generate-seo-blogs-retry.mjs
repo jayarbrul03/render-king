@@ -39,7 +39,7 @@ SEO LINKING RULES:
   * NCC Part F3: https://ncc.abcb.gov.au/editions/ncc-2022/adopted/volume-one/f-health-and-amenity/part-f3-roof-and-wall-cladding
   * QDC Part 2.5: https://www.housing.qld.gov.au/__data/assets/pdf_file/0025/15289/QDC-2.5-external-use-of-cladding.pdf
 - Link to Render King: [acrylic render](https://renderking.au/services#acrylic-render), [EPS cladding](https://renderking.au/services#eps-cladding)
-- Target 700-800 words. Use ## headings. End with CTA: contact projects@renderking.au or call 0468 041 477.
+- Target 700-800 words. Use ## headings. End with CTA: contact admin@renderking.au or call 0452 295 212.
 Always output valid JSON only — no markdown fences, no extra text.`;
 
 async function invokeLLM(topic) {

@@ -1,4 +1,4 @@
-import { COOKIE_NAME, ONE_YEAR_MS, UNAUTHED_ERR_MSG } from "@shared/const";
+import { COOKIE_NAME, ONE_YEAR_MS, UNAUTHED_ERR_MSG, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { ENV } from "./_core/env";
 import { verifyPassword } from "./_core/password";
@@ -168,7 +168,7 @@ Return a JSON object with these exact fields:
   "metaDescription": "SEO meta description 140-160 chars",
   "category": "one of: Industry Insights | Technical Guides | Builder Resources | Company News",
   "readTime": "X min read",
-  "content": "Full markdown article body, minimum 600 words. Use ## headings, bullet points, and strong CTAs. Include Brisbane/Gold Coast/SEQ references. End with a call to action to contact Render King at projects@renderking.au or 0468 041 477."
+  "content": "Full markdown article body, minimum 600 words. Use ## headings, bullet points, and strong CTAs. Include Brisbane/Gold Coast/SEQ references. End with a call to action to contact Render King at ${CONTACT_EMAIL} or ${CONTACT_PHONE_DISPLAY}."
 }`;
 
         const response = await invokeLLM({
@@ -283,7 +283,7 @@ Return a JSON object with these exact fields:
           return { success: true };
         } catch (error) {
           console.error("[Contact Form] Email error:", error);
-          throw new Error("Failed to send enquiry. Please try again or email us directly at projects@renderking.au");
+          throw new Error(`Failed to send enquiry. Please try again or email us directly at ${CONTACT_EMAIL}`);
         }
       }),
   }),

@@ -5,6 +5,11 @@
  */
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+} from "@shared/const";
 
 // Supplier badge component
 function SupplierBadge({ name }: { name: string }) {
@@ -127,14 +132,14 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="rk-gold mt-0.5 shrink-0" />
-                <a href="tel:0468041477" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300, color: '#f7f7f7' }}>
-                  0468 041 477
+                <a href={`tel:${CONTACT_PHONE}`} className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300, color: '#f7f7f7' }}>
+                  {CONTACT_PHONE_DISPLAY}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={14} className="rk-gold mt-0.5 shrink-0" />
-                <a href="mailto:projects@renderking.au" className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300, color: '#f2f2f2' }}>
-                  projects@renderking.au
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-white/60 hover:text-white text-sm transition-colors" style={{ fontWeight: 300, color: '#f2f2f2' }}>
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li className="flex items-start gap-3">

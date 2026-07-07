@@ -6,6 +6,10 @@ import Footer from "@/components/Footer";
 import { CheckCircle, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import {
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+} from "@shared/const";
 
 const serviceOptions = [
   "Acrylic Render",
@@ -35,7 +39,7 @@ export default function BuilderPortal() {
       setSubmitted(true);
     },
     onError: () => {
-      toast.error("Submission failed. Please call us directly on 0468 041 477.");
+      toast.error(`Submission failed. Please call us directly on ${CONTACT_PHONE_DISPLAY}.`);
     },
   });
 
@@ -101,7 +105,7 @@ export default function BuilderPortal() {
             )}
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/" className="rk-btn-gold">Back to Home</Link>
-              <a href="tel:0468041477" className="rk-btn-outline flex items-center gap-2">
+              <a href={`tel:${CONTACT_PHONE}`} className="rk-btn-outline flex items-center gap-2">
                 <Phone size={14} /> Call Us Now
               </a>
             </div>
@@ -293,7 +297,7 @@ export default function BuilderPortal() {
 
           <p className="text-center text-gray-400 text-xs" style={{ fontWeight: 300 }}>
             We respond within 1 business day. Or call us now on{" "}
-            <a href="tel:0468041477" className="text-[#c9a84c] font-semibold">0468 041 477</a>.
+            <a href={`tel:${CONTACT_PHONE}`} className="text-[#c9a84c] font-semibold">{CONTACT_PHONE_DISPLAY}</a>.
           </p>
         </form>
       </div>

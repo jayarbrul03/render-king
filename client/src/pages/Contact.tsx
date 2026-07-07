@@ -6,6 +6,11 @@ import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+} from "@shared/const";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", company: "", phone: "", email: "", message: "" });
@@ -18,7 +23,7 @@ export default function Contact() {
       setForm({ name: "", company: "", phone: "", email: "", message: "" });
     },
     onError: (err) => {
-      toast.error(err.message || "Failed to send. Please email projects@renderking.au directly.");
+      toast.error(err.message || `Failed to send. Please email ${CONTACT_EMAIL} directly.`);
     },
   });
 
@@ -112,14 +117,14 @@ export default function Contact() {
                     <Phone size={16} className="rk-gold mt-0.5 shrink-0" />
                     <div>
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1" style={{ letterSpacing: "0.1em", fontWeight: 600 }}>Phone</p>
-                      <a href="tel:0468041477" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>0468 041 477</a>
+                      <a href={`tel:${CONTACT_PHONE}`} className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>{CONTACT_PHONE_DISPLAY}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <Mail size={16} className="rk-gold mt-0.5 shrink-0" />
                     <div>
                       <p className="text-white/30 text-xs uppercase tracking-wider mb-1" style={{ letterSpacing: "0.1em", fontWeight: 600 }}>Email</p>
-                      <a href="mailto:projects@renderking.au" className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>projects@renderking.au</a>
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-white/70 hover:text-white text-sm transition-colors" style={{ fontWeight: 300 }}>{CONTACT_EMAIL}</a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">

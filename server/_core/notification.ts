@@ -48,7 +48,7 @@ const validatePayload = (input: NotificationPayload): NotificationPayload => {
 };
 
 /**
- * Emails the site owner (projects@renderking.au by default).
+ * Emails the site owner (admin@renderking.au by default).
  * Returns false when email delivery fails so callers can continue gracefully.
  */
 export async function notifyOwner(

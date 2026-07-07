@@ -132,7 +132,7 @@ Return a JSON object with these exact fields:
   "metaDescription": "SEO meta description 140-160 chars",
   "category": "one of: Industry Insights | Technical Guides | Builder Resources | Company News",
   "readTime": "X min read",
-  "content": "Full markdown article body, minimum 700 words. Use ## headings, bullet points where appropriate, and a strong CTA at the end. Include Brisbane/Gold Coast/SEQ references. End with a call to action to contact Render King at projects@renderking.au or call 0468 041 477."
+  "content": "Full markdown article body, minimum 700 words. Use ## headings, bullet points where appropriate, and a strong CTA at the end. Include Brisbane/Gold Coast/SEQ references. End with a call to action to contact Render King at admin@renderking.au or call 0452 295 212."
 }`;
 
   try {
